@@ -71,7 +71,7 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
             ) : (
               <MdRadioButtonUnchecked size={iconSize24} className='' />
             )}
-            <span className='max-w-full truncate'>{_(label)}</span>
+            <span className='max-w-full truncate font-semibold'>{_(label)}</span>
             {isCustomizable && themeColor === name && (
               <button onClick={() => onEditTheme(name)}>
                 <BiPencil size={iconSize16} className='absolute right-2 top-2' />
