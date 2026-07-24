@@ -48,7 +48,7 @@ const BackgroundTextureSelector: React.FC<BackgroundTextureSelectorProps> = ({
   return (
     <div>
       <SectionTitle className='mb-2'>{title}</SectionTitle>
-      <div className='mb-4 grid grid-cols-2 gap-4'>
+      <div className='mb-4 grid grid-cols-3 gap-4'>
         {allTextures.map((texture) => (
           // The swatch is a div (not a <button>) so the inner Delete
           // <button> can nest legally — interactive elements can't be
