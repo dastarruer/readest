@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  MdRadioButtonChecked,
-  MdClose,
-  MdAdd,
-  MdPlayCircleOutline,
-  MdRadioButtonUnchecked,
-} from 'react-icons/md';
+import { MdClose, MdAdd, MdPlayCircleOutline } from 'react-icons/md';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useResponsiveSize } from '@/hooks/useResponsiveSize';
 import { BoxedList, SectionTitle, SettingsRow, SettingsSelect } from '../primitives';
@@ -87,11 +81,6 @@ const BackgroundTextureSelector: React.FC<BackgroundTextureSelectorProps> = ({
               minHeight: '80px',
             }}
           >
-            {selectedTextureId === texture.id ? (
-              <MdRadioButtonChecked size={iconSize24} className='drop-shadow-md' />
-            ) : (
-              <MdRadioButtonUnchecked size={iconSize24} className='drop-shadow-md' />
-            )}
             {texture.animated && (
               <MdPlayCircleOutline
                 size={iconSize24}
