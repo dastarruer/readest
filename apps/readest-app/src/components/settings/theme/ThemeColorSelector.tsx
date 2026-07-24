@@ -48,12 +48,13 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
             // background, light or dark. The transparent border on inactive
             // cards reserves the same 2px so selecting/deselecting doesn't
             // shift the grid.
-            className={`relative flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 px-2 py-4 shadow-md ${
+            className={`relative flex cursor-pointer flex-col items-start justify-center gap-2 rounded-lg border-2 p-3 shadow-md ${
               themeColor === name ? 'border-current' : 'border-transparent'
             }`}
             style={{
               backgroundColor: isDarkMode ? colors.dark['base-100'] : colors.light['base-100'],
               color: isDarkMode ? colors.dark['base-content'] : colors.light['base-content'],
+              minHeight: '80px',
             }}
           >
             <input
@@ -66,9 +67,9 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
               className='hidden'
             />
             {themeColor === name ? (
-              <MdRadioButtonChecked size={iconSize24} />
+              <MdRadioButtonChecked size={iconSize24} className='' />
             ) : (
-              <MdRadioButtonUnchecked size={iconSize24} />
+              <MdRadioButtonUnchecked size={iconSize24} className='' />
             )}
             <span className='max-w-full truncate'>{_(label)}</span>
             {isCustomizable && themeColor === name && (
