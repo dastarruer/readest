@@ -47,7 +47,7 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
             // background, light or dark. The transparent border on inactive
             // cards reserves the same 2px so selecting/deselecting doesn't
             // shift the grid.
-            className={`relative flex cursor-pointer flex-col items-center justify-end gap-2 rounded-lg border-2 p-3 shadow-md ${
+            className={`relative flex cursor-pointer flex-col items-center justify-end rounded-lg border-2 p-3 shadow-md ${
               themeColor === name ? 'border-current' : 'border-transparent'
             }`}
             style={{
@@ -65,6 +65,7 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
               onChange={() => onThemeColorChange(name)}
               className='hidden'
             />
+            <span className='max-w-full truncate text-lg font-bold'>Aa</span>
             <span className='max-w-full truncate font-semibold'>{_(label)}</span>
             {isCustomizable && themeColor === name && (
               <button onClick={() => onEditTheme(name)}>
