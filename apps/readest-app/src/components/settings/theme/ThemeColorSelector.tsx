@@ -75,11 +75,11 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
           </button>
         ))}
         <button
-          className='relative flex cursor-pointer flex-col items-center justify-center rounded-lg border border-dashed px-2 py-4 shadow-md'
+          className='relative flex cursor-pointer flex-col gap-1 items-center justify-end rounded-lg border border-dashed p-3 shadow-md'
           onClick={onCreateTheme}
         >
           <PiPlus size={iconSize24} />
-          <span className='max-w-full truncate'>{_('Custom')}</span>
+          <span className='max-w-full truncate font-semibold'>{_('Custom')}</span>
         </button>
       </div>
     </div>
