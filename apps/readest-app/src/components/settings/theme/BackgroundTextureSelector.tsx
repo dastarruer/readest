@@ -82,7 +82,7 @@ const BackgroundTextureSelector: React.FC<BackgroundTextureSelectorProps> = ({
             }}
           >
             {selectedTextureId === texture.id && (
-              <MdRadioButtonChecked size={iconSize24} className='absolute right-2 top-2' />
+              <MdRadioButtonChecked size={iconSize24} className='absolute left-2 top-2' />
             )}
             {texture.animated && (
               <MdPlayCircleOutline
