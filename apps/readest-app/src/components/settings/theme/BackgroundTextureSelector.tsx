@@ -71,7 +71,7 @@ const BackgroundTextureSelector: React.FC<BackgroundTextureSelectorProps> = ({
             // light mode). Guaranteed contrast against any texture image.
             // Inactive cards keep `border-base-300` so the slot doesn't
             // shift on selection change.
-            className={`bg-base-100 relative flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 p-4 shadow-md transition-colors ${
+            className={`bg-base-100 relative flex cursor-pointer flex-col items-start justify-between rounded-lg border-2 p-3 shadow-md transition-colors ${
               selectedTextureId === texture.id ? 'border-base-content' : 'border-base-300'
             }`}
             style={{
@@ -81,9 +81,7 @@ const BackgroundTextureSelector: React.FC<BackgroundTextureSelectorProps> = ({
               minHeight: '80px',
             }}
           >
-            {selectedTextureId === texture.id && (
-              <MdRadioButtonChecked size={iconSize24} className='absolute left-2 top-2' />
-            )}
+            {selectedTextureId === texture.id && <MdRadioButtonChecked size={iconSize24} />}
             {texture.animated && (
               <MdPlayCircleOutline
                 size={iconSize24}

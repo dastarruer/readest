@@ -48,7 +48,7 @@ const ThemeColorSelector: React.FC<ThemeColorSelectorProps> = ({
             // background, light or dark. The transparent border on inactive
             // cards reserves the same 2px so selecting/deselecting doesn't
             // shift the grid.
-            className={`relative flex cursor-pointer flex-col items-start justify-center gap-2 rounded-lg border-2 p-3 shadow-md ${
+            className={`relative flex cursor-pointer flex-col items-start justify-between gap-2 rounded-lg border-2 p-3 shadow-md ${
               themeColor === name ? 'border-current' : 'border-transparent'
             }`}
             style={{
