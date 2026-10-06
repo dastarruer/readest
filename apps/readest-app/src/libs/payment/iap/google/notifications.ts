@@ -39,7 +39,7 @@ interface VoidedPurchaseNotification {
   refundType?: number;
 }
 
-export interface DeveloperNotification {
+interface DeveloperNotification {
   version?: string;
   packageName?: string;
   eventTimeMillis?: string;

@@ -65,7 +65,7 @@ type StreamRow = {
   items?: (Book | BooksGroup)[];
   hasImport?: boolean;
 };
-export const bookshelfColumns = (width: number, auto: boolean, fixed: number) =>
+const bookshelfColumns = (width: number, auto: boolean, fixed: number) =>
   auto
     ? width >= 1536
       ? 12
@@ -77,7 +77,7 @@ export const bookshelfColumns = (width: number, auto: boolean, fixed: number) =>
             ? 4
             : 3
     : Math.max(1, Math.min(24, Math.floor(fixed || 3)));
-export const buildBookshelfRows = (
+const buildBookshelfRows = (
   sections: ShelfSection[],
   columns: number,
   includeImport = false,

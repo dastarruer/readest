@@ -24,7 +24,7 @@ export interface OneDriveAuth {
   getAccessToken(): Promise<string>;
 }
 export type FetchFn = (input: string, init?: RequestInit) => Promise<Response>;
-export type SleepFn = (ms: number) => Promise<void>;
+type SleepFn = (ms: number) => Promise<void>;
 export interface OneDriveProviderOptions {
   sleep?: SleepFn;
 }

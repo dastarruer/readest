@@ -44,7 +44,7 @@ export interface RunTurnInput {
  * Synthesized citation event the runtime emits when a tool result
  * implies one. `extractCitations` is the customization point.
  */
-export interface CitationLike {
+interface CitationLike {
   cfi: string;
   sectionIndex: number;
   chapterTitle?: string;

@@ -47,7 +47,7 @@ export interface ClipRequest {
 }
 
 /** service worker → popup (broadcast updates) */
-export interface ClipProgressMessage {
+interface ClipProgressMessage {
   type: 'send-to-readest:progress';
   progress: ClipProgress;
 }

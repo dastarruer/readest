@@ -9,9 +9,9 @@ import * as epubcfi from 'foliate-js/epubcfi.js';
 
 export const CFI = epubcfi;
 
-export type DocumentFile = File;
+type DocumentFile = File;
 
-export type Location = {
+type Location = {
   current: number;
   next: number;
   total: number;
@@ -704,7 +704,7 @@ export const getFileExtFromMimeType = (mimeType?: string): string => {
   return '';
 };
 
-export const getMimeTypeFromFileExt = (ext: string): string => {
+const getMimeTypeFromFileExt = (ext: string): string => {
   ext = ext.toLowerCase();
   for (const format in EXTS) {
     if (EXTS[format as BookFormat] === ext) {

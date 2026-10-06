@@ -20,7 +20,7 @@ export interface FeedManifest {
   lastFetchedAt?: number;
 }
 
-export const articleIdOf = (item: RssFeedItem): string => item.id;
+const articleIdOf = (item: RssFeedItem): string => item.id;
 
 export const emptyManifest = (feedUrl: string, title: string): FeedManifest => ({
   feedUrl,

@@ -150,5 +150,3 @@ export const useCloudSyncStatus = (nativeLastSyncedAt = 0, bookKey?: string): Cl
     hardcoverSync,
   ]);
 };
-
-export default useCloudSyncStatus;

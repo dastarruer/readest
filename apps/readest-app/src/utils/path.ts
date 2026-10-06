@@ -64,7 +64,7 @@ export const getFolderImportGroupName = (filePath: string, basePath: string) => 
   return getDirPath(filePath).replace(rootPath, '').replace(/^\//, '');
 };
 
-export const joinPaths = async (...paths: string[]) => {
+const joinPaths = async (...paths: string[]) => {
   return await join(...paths);
 };
 

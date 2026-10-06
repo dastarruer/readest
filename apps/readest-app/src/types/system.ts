@@ -20,7 +20,7 @@ export type DeleteAction = 'cloud' | 'local' | 'both' | 'purge';
 export type SelectDirectoryMode = 'read' | 'write';
 export type DistChannel = 'readest' | 'playstore' | 'appstore' | 'unknown';
 
-export interface DictionaryImportProgress {
+interface DictionaryImportProgress {
   stage: string;
   completed: number;
   total?: number;

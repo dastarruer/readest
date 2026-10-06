@@ -49,7 +49,7 @@ const openDatabase = (): Promise<IDBDatabase> => {
   });
 };
 
-export const loadCacheFromDB = async (
+const loadCacheFromDB = async (
   options: {
     maxAge?: number;
     maxEntries?: number;
@@ -423,7 +423,7 @@ export const getCacheStats = async (
   }
 };
 
-export const pruneCache = async (
+const pruneCache = async (
   options: { maxAge?: number; maxEntries?: number; maxSizeInBytes?: number; dryRun?: boolean } = {},
 ): Promise<number> => {
   const { maxAge, maxEntries, maxSizeInBytes, dryRun = false } = options;
@@ -519,7 +519,7 @@ export const pruneCache = async (
   }
 };
 
-export const initCache = async (
+const initCache = async (
   options: {
     preload?: boolean;
     preloadOptions?: {

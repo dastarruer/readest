@@ -15,13 +15,16 @@
     "worktree:new": "pnpm --filter @readest/readest-app worktree:new",
     "worktree:rm": "pnpm --filter @readest/readest-app worktree:rm",
     "format": "biome format --write .",
-    "format:check": "biome format ."
+    "format:check": "biome format .",
+    "knip": "knip"
   },
   "packageManager": "pnpm@11.1.1",
   "devDependencies": {
     "@biomejs/biome": "^2.4.9",
     "@sindresorhus/tsconfig": "^6.0.0",
+    "@types/node": "^22.19.19",
     "husky": "^9.1.6",
+    "knip": "^6.39.0",
     "lint-staged": "^16.2.7",
     "typescript": "^5"
   },

@@ -64,7 +64,7 @@ import type { CustomTranslator, TranslationPrompt } from '@/types/translation';
 import type { Hlc, ReplicaRow } from '@/types/replica';
 import type { SystemSettings } from '@/types/settings';
 
-export type ReplicaKind =
+type ReplicaKind =
   | 'dictionary'
   | 'font'
   | 'texture'

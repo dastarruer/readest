@@ -66,7 +66,7 @@ import SetStatusAlert from './SetStatusAlert';
 import { useOpenBook } from '../hooks/useOpenBook';
 import LibrarySearchResults from './LibrarySearchResults';
 
-export interface ContentSearchRequest {
+interface ContentSearchRequest {
   query: string;
   config: LibrarySearchConfig;
 }

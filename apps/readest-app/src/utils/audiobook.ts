@@ -3,7 +3,7 @@ import type { ABSServer } from '@/types/audiobookshelf';
 import type { Book } from '@/types/book';
 
 /** Scheme prefix for the synthetic filePath of an ABS streaming audiobook. */
-export const ABS_FILE_SCHEME = 'abs://';
+const ABS_FILE_SCHEME = 'abs://';
 
 /**
  * True when `book` plays through the audiobook player rather than the reader:

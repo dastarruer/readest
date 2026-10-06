@@ -207,7 +207,7 @@ async function toAbsolute(resolved: ResolvedPath): Promise<string> {
   return resolved.fp ? nodePath.join(prefix, resolved.fp) : prefix;
 }
 
-export const nodeFileSystem: FileSystem = {
+const nodeFileSystem: FileSystem = {
   resolvePath: getPathResolver(),
 
   async getPrefix(base: BaseDir) {

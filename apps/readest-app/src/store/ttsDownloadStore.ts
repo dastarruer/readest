@@ -10,7 +10,7 @@ import type { DownloadChapter } from '@/services/tts/downloadChapters';
 // already show 'Downloaded' for a fully cached chapter, so a queue row would
 // be pure history. Only pending/in_progress/failed rows are ever persisted.
 
-export type TTSDownloadStatus = 'pending' | 'in_progress' | 'failed';
+type TTSDownloadStatus = 'pending' | 'in_progress' | 'failed';
 
 export interface TTSDownloadItem {
   id: string;

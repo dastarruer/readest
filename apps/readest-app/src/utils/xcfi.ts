@@ -765,7 +765,7 @@ export const getXPointerFromCFI = async (
 // Also remove any trailing .N suffixes after node steps.
 // This has neglectable effect on position accuracy as the XPointer still point to the correct element
 // while offset within the text node is usually ignored by pagination.
-export const normalizeProgressXPointer = (xpointer: string): string => {
+const normalizeProgressXPointer = (xpointer: string): string => {
   const tailingTextOffset = /\/text\(\).*$/;
   if (xpointer.match(tailingTextOffset)) {
     xpointer = xpointer.replace(tailingTextOffset, '');

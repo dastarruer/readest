@@ -9,7 +9,7 @@ import { getThemeCode } from '@/utils/style';
 
 type Translate = (key: string) => string;
 
-export type WebBrowserLabelKey =
+type WebBrowserLabelKey =
   | 'close'
   | 'clipPage'
   | 'back'

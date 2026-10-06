@@ -53,7 +53,7 @@ import {
  * the parent supplies `settings`. Doubles as the GC surface for remote
  * orphans via cleanup mode.
  */
-export interface WebDAVBrowsePaneProps {
+interface WebDAVBrowsePaneProps {
   settings: WebDAVSettings;
   /**
    * Persist a partial WebDAV settings patch. Used to remember the sort

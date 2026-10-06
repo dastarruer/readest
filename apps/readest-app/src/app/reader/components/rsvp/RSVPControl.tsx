@@ -56,15 +56,9 @@ export interface RsvpTtsPositionDetail {
 //   syncing     — a cross-section re-extract is pending
 //   decoupled   — a manual RSVP nav dropped following while TTS still plays
 //   unsupported — fixed-layout book; TTS sync can never engage (D7)
-export type TtsSyncStatus =
-  | 'idle'
-  | 'following'
-  | 'syncing'
-  | 'decoupled'
-  | 'paused'
-  | 'unsupported';
+type TtsSyncStatus = 'idle' | 'following' | 'syncing' | 'decoupled' | 'paused' | 'unsupported';
 
-export interface RsvpTtsPendingSync {
+interface RsvpTtsPendingSync {
   cfi: string;
   sequence: number;
   sectionIndex: number;

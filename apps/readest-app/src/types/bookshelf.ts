@@ -8,7 +8,7 @@ import type { ReplicaRow } from './replica';
 
 export type BookshelfLayout = 'carousel' | 'grid' | 'list';
 export type BookshelfFieldKind = 'text' | 'collection' | 'number' | 'date' | 'boolean';
-export type BookshelfDateUnit = 'days' | 'months' | 'years';
+type BookshelfDateUnit = 'days' | 'months' | 'years';
 export type BookshelfOperator =
   | 'contains'
   | 'notContains'

@@ -24,7 +24,7 @@ import { createBookOrbitClient } from './createClient';
  * proxy rather than by the client, so an expiring token produces no 401 the
  * client could react to -- only a track that stops mid-chapter.
  */
-export const PROXY_REFRESH_MS = 10 * 60 * 1000;
+const PROXY_REFRESH_MS = 10 * 60 * 1000;
 
 const originOf = (serverUrl: string): string | null => {
   try {

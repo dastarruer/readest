@@ -93,7 +93,7 @@ export interface ExchangeAckApplied {
   datetimeUpdated?: string;
 }
 
-export interface ExchangeAckDeleted {
+interface ExchangeAckDeleted {
   serverId: number;
   status: 'applied' | 'failed';
 }
@@ -120,14 +120,14 @@ export interface BookmarkExchangeBookRequest {
   changes: KoBookmark[];
 }
 
-export interface BookmarkAddEntry {
+interface BookmarkAddEntry {
   serverId: number;
   pos: string;
   pageno: number | null;
   title: string;
 }
 
-export interface BookmarkDeleteEntry {
+interface BookmarkDeleteEntry {
   serverId: number;
   key: string;
   datetime: string | null;
@@ -184,7 +184,7 @@ export interface MatchCheckResponse {
   libraryVersion: string;
 }
 
-export interface PageStatsEventWire {
+interface PageStatsEventWire {
   page: number;
   startTime: number;
   durationSeconds: number;

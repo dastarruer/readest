@@ -19,7 +19,7 @@ export const PIN_SALT_BYTES = 16;
  * snappy (~50–100ms on typical hardware) while still adding a
  * meaningful per-attempt cost.
  */
-export const PIN_PBKDF2_ITERATIONS = 100_000;
+const PIN_PBKDF2_ITERATIONS = 100_000;
 
 const PIN_RE = /^[0-9]{4}$/;
 

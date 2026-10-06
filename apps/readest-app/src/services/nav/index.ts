@@ -71,7 +71,7 @@ export type { SectionFragment };
 
 export const BOOK_NAV_VERSION = 4;
 
-export interface BookNavSection {
+interface BookNavSection {
   id: string;
   fragments: SectionFragment[];
 }

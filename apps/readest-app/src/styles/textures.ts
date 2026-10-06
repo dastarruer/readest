@@ -65,7 +65,7 @@ export function getTextureName(path: string): string {
   return fileName.replace(/\.(jpg|jpeg|png|gif|bmp|webp|mp4)$/i, '');
 }
 
-export function getTextureId(name: string): string {
+function getTextureId(name: string): string {
   return md5Fingerprint(name);
 }
 

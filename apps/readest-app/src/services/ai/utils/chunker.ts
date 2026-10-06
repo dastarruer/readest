@@ -1,7 +1,7 @@
 import { TextChunk } from '../types';
 
 // same formula as toc.ts - 1500 chars = 1 page
-export const SIZE_PER_PAGE = 1500;
+const SIZE_PER_PAGE = 1500;
 
 interface ChunkingOptions {
   maxChunkSize: number;

@@ -32,7 +32,7 @@ import {
   shouldApplyRemoteBookMetadata,
 } from './merge';
 
-export type SyncStrategy = 'silent' | 'send' | 'receive';
+type SyncStrategy = 'silent' | 'send' | 'receive';
 
 export interface PullResult {
   /** True when the remote had a config and we merged something into local. */
@@ -59,7 +59,7 @@ export interface DeleteRemoteBookDirResult {
   reason?: string;
 }
 
-export interface SyncFailureEntry {
+interface SyncFailureEntry {
   hash: string;
   title: string;
   reason: string;

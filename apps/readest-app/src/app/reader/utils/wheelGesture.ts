@@ -128,4 +128,4 @@ export const hasScrollRoomY = (
   return false;
 };
 
-export type WheelGestureDetector = ReturnType<typeof createWheelGestureDetector>;
+type WheelGestureDetector = ReturnType<typeof createWheelGestureDetector>;

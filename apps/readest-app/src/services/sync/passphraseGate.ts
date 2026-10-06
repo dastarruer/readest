@@ -36,7 +36,7 @@ import type { ReplicaSyncClient } from '@/libs/replicaSyncClient';
 
 export type PassphrasePromptKind = 'unlock' | 'setup';
 
-export interface PassphrasePromptRequest {
+interface PassphrasePromptRequest {
   kind: PassphrasePromptKind;
   /** Set on a re-prompt after the previous attempt failed to verify. */
   error?: string;

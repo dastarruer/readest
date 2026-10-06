@@ -120,7 +120,7 @@ export async function createOrUpdateSubscription(userId: string, purchase: Verif
   }
 }
 
-export async function createOrUpdatePayment(userId: string, purchase: VerifiedPurchase) {
+async function createOrUpdatePayment(userId: string, purchase: VerifiedPurchase) {
   try {
     const supabase = createSupabaseAdminClient();
     const { data: existingPayment } = await supabase

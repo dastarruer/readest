@@ -1,7 +1,7 @@
 import { Book, BookConfig } from '@/types/book';
 
 /** A buffered file payload + its byte length (for the HEAD-vs-local probe). */
-export interface BookBytes {
+interface BookBytes {
   bytes: ArrayBuffer;
   size: number;
 }

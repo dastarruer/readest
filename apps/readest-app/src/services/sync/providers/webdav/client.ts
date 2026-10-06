@@ -46,7 +46,7 @@ export interface WebDAVConfig {
   password: string;
 }
 
-export type WebDAVConnectErrorCode =
+type WebDAVConnectErrorCode =
   | 'SERVER_URL_REQUIRED'
   | 'AUTH_FAILED'
   | 'ROOT_NOT_FOUND'
@@ -640,7 +640,7 @@ export const ensureDirectory = async (config: WebDAVConfig, ancestors: string[])
 };
 
 /** Existence probe via HEAD; returns false on 404, true on 2xx, throws otherwise. */
-export const exists = async (config: WebDAVConfig, path: string): Promise<boolean> => {
+const exists = async (config: WebDAVConfig, path: string): Promise<boolean> => {
   const response = await requestWithMethod(config, path, 'HEAD');
   if (response.status === 404) return false;
   if (response.status >= 200 && response.status < 300) return true;
@@ -651,7 +651,7 @@ export const exists = async (config: WebDAVConfig, path: string): Promise<boolea
 };
 
 /** Best-effort delete; 404 is treated as success (already gone). */
-export const deleteFile = async (config: WebDAVConfig, path: string): Promise<void> => {
+const deleteFile = async (config: WebDAVConfig, path: string): Promise<void> => {
   const response = await requestWithMethod(config, path, 'DELETE');
   if (response.status === 404) return;
   if (response.status >= 200 && response.status < 300) return;

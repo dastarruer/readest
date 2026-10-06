@@ -21,10 +21,10 @@ const isAbsOfflineEntry = (entryName: string): boolean => {
 };
 
 /** Root-level zip entry name for the backed-up global settings snapshot. */
-export const SETTINGS_BACKUP_FILENAME = 'settings.json';
+const SETTINGS_BACKUP_FILENAME = 'settings.json';
 
 /** Root-level zip entry name for the reading statistics (#6488). */
-export const STATISTICS_BACKUP_FILENAME = 'statistics.json';
+const STATISTICS_BACKUP_FILENAME = 'statistics.json';
 
 /**
  * Options controlling what a backup zip includes.

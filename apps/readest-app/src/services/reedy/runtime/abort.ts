@@ -10,7 +10,7 @@
  * `cleanup` function unsubscribes listeners so we don't leak across
  * long-lived consumers.
  */
-export function anySignal(...signals: Array<AbortSignal | undefined>): {
+function anySignal(...signals: Array<AbortSignal | undefined>): {
   signal: AbortSignal;
   cleanup: () => void;
 } {

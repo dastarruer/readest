@@ -38,4 +38,4 @@ export const exportRawKey = async (key: CryptoKey): Promise<Uint8Array> => {
   return new Uint8Array(raw);
 };
 
-export const PBKDF2_ITERATIONS = PBKDF2_DEFAULT_ITERATIONS;
+const PBKDF2_ITERATIONS = PBKDF2_DEFAULT_ITERATIONS;

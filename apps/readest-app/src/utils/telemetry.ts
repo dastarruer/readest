@@ -28,7 +28,7 @@ export const rollIntoTelemetryPromptBucket = (rng: () => number = Math.random) =
   return rng() < TELEMETRY_PROMPT_BUCKET_RATE;
 };
 
-export const captureEvent = (event: string, properties?: Record<string, unknown>) => {
+const captureEvent = (event: string, properties?: Record<string, unknown>) => {
   if (!hasOptedOutTelemetry()) {
     posthog.capture(event, properties);
   }

@@ -17,7 +17,7 @@ export const MANIFEST_SCHEMA = 'bookorbit.audiobook-manifest';
  */
 export const SUPPORTED_SCHEMA_VERSION = 2;
 
-export interface BookOrbitAsset {
+interface BookOrbitAsset {
   assetId: string;
   sequence: number;
   format: string;
@@ -26,7 +26,7 @@ export interface BookOrbitAsset {
   etag: string;
 }
 
-export interface BookOrbitChapter {
+interface BookOrbitChapter {
   id: string;
   title: string;
   assetId: string;

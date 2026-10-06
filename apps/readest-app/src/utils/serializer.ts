@@ -92,7 +92,7 @@ export const deserializeConfig = (
   return config;
 };
 
-export const compressConfig = (
+const compressConfig = (
   config: BookConfig,
   globalViewSettings: ViewSettings,
   defaultSearchConfig: BookSearchConfig,

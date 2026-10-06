@@ -2,7 +2,7 @@ import { performance } from 'node:perf_hooks';
 import { cpus, platform, arch, totalmem } from 'node:os';
 import { readFileSync } from 'node:fs';
 
-export interface BenchContext {
+interface BenchContext {
   /** Whether to print verbose per-iteration info. */
   verbose: boolean;
 }

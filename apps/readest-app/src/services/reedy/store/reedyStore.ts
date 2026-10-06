@@ -38,7 +38,7 @@ export type ReedyMessagePart =
   | { type: 'error'; message: string; kind: string }
   | { type: 'abort'; partial: boolean };
 
-export interface ReedyUserMessage {
+interface ReedyUserMessage {
   id: string;
   role: 'user';
   text: string;

@@ -37,7 +37,7 @@ export function generateFeedCoverSvg(feedUrl: string, title: string): EpubImage 
 // Books/<hash>/cover.png and the Android WebView will not render SVG bytes
 // served under a .png name, so we draw the SVG onto a canvas first (the
 // same approach importBook uses for embedded covers).
-export async function rasterizeCoverSvg(svg: EpubImage, scale = 2): Promise<ArrayBuffer> {
+async function rasterizeCoverSvg(svg: EpubImage, scale = 2): Promise<ArrayBuffer> {
   const blob = new Blob([svg.bytes], { type: svg.mime || 'image/svg+xml' });
   const url = URL.createObjectURL(blob);
   try {

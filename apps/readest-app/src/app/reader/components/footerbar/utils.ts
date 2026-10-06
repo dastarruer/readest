@@ -6,13 +6,10 @@ export const getNavigationIcon = (
   nextIcon: React.ReactNode,
 ) => (rtl ? nextIcon : prevIcon);
 
-export const getNavigationLabel = (
-  rtl: boolean | undefined,
-  prevLabel: string,
-  nextLabel: string,
-) => (rtl ? nextLabel : prevLabel);
+const getNavigationLabel = (rtl: boolean | undefined, prevLabel: string, nextLabel: string) =>
+  rtl ? nextLabel : prevLabel;
 
-export const getNavigationHandler = (
+const getNavigationHandler = (
   rtl: boolean | undefined,
   prevHandler: () => void,
   nextHandler: () => void,

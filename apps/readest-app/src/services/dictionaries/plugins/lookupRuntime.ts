@@ -59,6 +59,6 @@ export const acquirePluginLookupRuntime = (
   };
 };
 
-export const __resetPluginLookupRuntimesForTests = (): void => {
+const __resetPluginLookupRuntimesForTests = (): void => {
   pools = new WeakMap();
 };

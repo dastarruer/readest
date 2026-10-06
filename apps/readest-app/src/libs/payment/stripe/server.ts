@@ -127,7 +127,7 @@ export const createOrUpdateSubscription = async (
     .eq('id', userId);
 };
 
-export const COMPLETED_PAYMENT_STATUSES: PaymentStatus[] = ['completed', 'succeeded'];
+const COMPLETED_PAYMENT_STATUSES: PaymentStatus[] = ['completed', 'succeeded'];
 
 export const createOrUpdatePayment = async (
   userId: string,

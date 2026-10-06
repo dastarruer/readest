@@ -227,7 +227,7 @@ export async function hybridSearch(
   return results;
 }
 
-export async function clearBookIndex(bookHash: string): Promise<void> {
+async function clearBookIndex(bookHash: string): Promise<void> {
   aiLogger.store.clear(bookHash);
   await aiStore.clearBook(bookHash);
   indexingStates.delete(bookHash);

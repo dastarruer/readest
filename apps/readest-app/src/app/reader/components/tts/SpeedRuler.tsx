@@ -1,9 +1,9 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import TickRuler from './TickRuler';
 
-export const SPEED_MIN = 0.5;
-export const SPEED_MAX = 3.0;
-export const SPEED_STEP = 0.05;
+const SPEED_MIN = 0.5;
+const SPEED_MAX = 3.0;
+const SPEED_STEP = 0.05;
 
 const SPEED_MARKS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
 

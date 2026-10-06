@@ -30,7 +30,7 @@ const STATE_KEY = 'gdrive_web_oauth_state';
 const RETURN_KEY = 'gdrive_web_oauth_return';
 
 /** Path of the OAuth callback route (must match the registered redirect URI). */
-export const WEB_OAUTH_CALLBACK_PATH = '/gdrive-callback';
+const WEB_OAUTH_CALLBACK_PATH = '/gdrive-callback';
 
 /** The redirect URI for the current origin (register this on the Web client). */
 export const webDriveRedirectUri = (): string =>

@@ -44,7 +44,7 @@ export interface KosyncProgressProvider {
  * What this hook actually drives: the KOSync wire settings plus the knobs a
  * provider adds on top. `settings.kosync` satisfies it as-is.
  */
-export type KosyncEngineConfig = KOSyncSettings & {
+type KosyncEngineConfig = KOSyncSettings & {
   /**
    * Manual-sync opt-out (#6029), set by BookOrbit only. When false the hook
    * never pushes on its own; the server hears from us only on an explicit
@@ -54,7 +54,7 @@ export type KosyncEngineConfig = KOSyncSettings & {
   autoSync?: boolean;
 };
 
-export const kosyncProvider: KosyncProgressProvider = {
+const kosyncProvider: KosyncProgressProvider = {
   name: 'kosync',
   selectConfig: (settings) =>
     settings.kosync.username && settings.kosync.userkey ? settings.kosync : null,

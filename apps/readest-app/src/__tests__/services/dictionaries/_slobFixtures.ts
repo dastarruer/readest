@@ -11,7 +11,7 @@ import path from 'node:path';
 
 const FIXTURES_DIR = path.resolve(__dirname, '../../fixtures/data/dicts');
 
-export const SLOB_FIXTURE_PATH = path.join(FIXTURES_DIR, 'eng-nld.slob');
+const SLOB_FIXTURE_PATH = path.join(FIXTURES_DIR, 'eng-nld.slob');
 export const SLOB_FIXTURE_NAME = 'eng-nld.slob';
 
 async function readAsFile(filePath: string, name: string): Promise<File> {

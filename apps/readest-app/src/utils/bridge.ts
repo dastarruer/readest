@@ -24,7 +24,7 @@ export interface SaveImageToGalleryResponse {
   error?: string;
 }
 
-export interface UseBackgroundAudioRequest {
+interface UseBackgroundAudioRequest {
   enabled: boolean;
 }
 
@@ -129,7 +129,7 @@ export interface RefreshEinkScreenResponse {
   error?: string;
 }
 
-export interface EinkRefreshSupportedResponse {
+interface EinkRefreshSupportedResponse {
   supported: boolean;
 }
 
@@ -149,7 +149,7 @@ export async function saveImageToGallery(
   });
 }
 
-export async function invokeUseBackgroundAudio(request: UseBackgroundAudioRequest): Promise<void> {
+async function invokeUseBackgroundAudio(request: UseBackgroundAudioRequest): Promise<void> {
   await invoke('plugin:native-bridge|use_background_audio', {
     payload: request,
   });
@@ -346,7 +346,7 @@ export async function refreshEinkScreen(): Promise<RefreshEinkScreenResponse> {
  * to decide whether to offer the "Auto Full Refresh" / "Refresh Page" options.
  * Non-e-ink devices and other platforms report `supported: false`.
  */
-export async function isEinkRefreshSupported(): Promise<boolean> {
+async function isEinkRefreshSupported(): Promise<boolean> {
   const response = await invoke<EinkRefreshSupportedResponse>(
     'plugin:native-bridge|is_eink_refresh_supported',
   );
@@ -537,7 +537,7 @@ export async function clearSecureItem(request: GetSecureItemRequest): Promise<Se
 
 // ── Bookshelf widget ────────────────────────────────────────────────────────
 
-export interface BookshelfWidgetBookPayload {
+interface BookshelfWidgetBookPayload {
   hash: string;
   title: string;
   author: string;
@@ -553,7 +553,7 @@ export interface BookshelfWidgetTts {
 
 /** A group tile: a mosaic of up to 4 member covers (see
  * buildBookshelfWidgetItems in services/widget/bookshelfWidget.ts). */
-export interface BookshelfWidgetGroupPayload {
+interface BookshelfWidgetGroupPayload {
   id: string;
   groupBy: string;
   value: string;
@@ -561,7 +561,7 @@ export interface BookshelfWidgetGroupPayload {
 }
 
 /** One grid tile: a book or a group. */
-export type BookshelfWidgetItemPayload =
+type BookshelfWidgetItemPayload =
   | ({ type: 'book' } & BookshelfWidgetBookPayload)
   | ({ type: 'group' } & BookshelfWidgetGroupPayload);
 

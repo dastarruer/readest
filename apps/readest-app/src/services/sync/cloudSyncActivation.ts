@@ -16,7 +16,7 @@ import { broadcastGlobalSettings } from '@/utils/settingsSync';
  * opt-out: it anchors the mixed-fleet probe ("when did this device stop
  * writing native rows"), which a device back on the derived default never did.
  */
-export const withReadestCloudChoice = (
+const withReadestCloudChoice = (
   settings: SystemSettings,
   enabled: boolean | undefined,
 ): SystemSettings => ({

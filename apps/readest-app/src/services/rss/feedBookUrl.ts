@@ -1,4 +1,4 @@
-export const FEED_SCHEME = 'feed://';
+const FEED_SCHEME = 'feed://';
 
 export const isFeedBookUrl = (url: string): boolean => url.startsWith(FEED_SCHEME);
 

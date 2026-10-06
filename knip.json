@@ -1,0 +1,31 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "tags": ["-lintignore"],
+  "ignore": ["packages/tauri/**", "packages/simplecc-wasm/**"],
+  "ignoreBinaries": ["sentry-cli", "luajit", "luarocks", "busted", "rustup", "cargo-zigbuild"],
+  "ignoreDependencies": ["fflate"],
+  "ignoreIssues": {
+    "apps/readest-app/src/app/reader/hooks/useTouchInterceptor.ts": ["duplicates"],
+    "apps/readest-app/src/services/plugins/contract.ts": ["duplicates"]
+  },
+  "workspaces": {
+    "apps/readest-app": {
+      "entry": [
+        "open-next.config.ts",
+        "src/sw.ts",
+        "i18next-scanner.config.cjs",
+        "vitest.*.config.mts",
+        "vitest.tauri.setup.ts",
+        "e2e/**/*.e2e.ts",
+        "scripts/**/*.mjs",
+        "public/workers/*.js"
+      ],
+      "ignore": ["src-tauri/plugins/**"],
+      "ignoreBinaries": ["adb", "ideviceinstaller", "sqlite3", "tsx"],
+      "ignoreDependencies": ["pdfjs-dist", "serwist", "postcss-load-config"]
+    },
+    "apps/readest-app/extensions/send-to-readest": {
+      "ignoreBinaries": ["magick"]
+    }
+  }
+}

@@ -12,7 +12,7 @@ import {
 } from './adb';
 import { CdpPage, forwardWebViewDevtools, listPages } from './cdp';
 
-export const APP_PKG = 'com.bilingify.readest';
+const APP_PKG = 'com.bilingify.readest';
 const CDP_PORT = Number(process.env['READEST_CDP_PORT'] ?? 9333);
 const REMOTE_FIXTURE_DIR = '/sdcard/Download';
 
@@ -192,7 +192,7 @@ export interface SelectionTargets {
  * needs generated hyphens, and the app's hyphenation setting may be off on
  * the test device — the injected style makes the lane independent of it.
  */
-export const ensureHyphenation = (page: CdpPage) =>
+const ensureHyphenation = (page: CdpPage) =>
   page.evaluate<number>(`
     const view = document.querySelector('foliate-view');
     let injected = 0;

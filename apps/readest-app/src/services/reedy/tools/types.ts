@@ -1,8 +1,6 @@
 import type { z } from 'zod';
 import type { PermissionLevel } from '../runtime/events';
 
-export type { PermissionLevel };
-
 /**
  * Per-call context handed to every tool. The runtime constructs one of
  * these per assistant turn and shares it across every tool dispatched in
@@ -54,7 +52,7 @@ export interface ReedyTool<TArgs = unknown, TResult = unknown> {
  * The shape the runtime needs back from registry.invoke() for each tool
  * call so it can emit the corresponding ReedyEvent.
  */
-export interface ToolInvocation<TResult = unknown> {
+interface ToolInvocation<TResult = unknown> {
   ok: true;
   result: TResult;
   durationMs: number;

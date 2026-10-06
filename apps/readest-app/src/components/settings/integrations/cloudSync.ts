@@ -3,7 +3,4 @@
  * (`src/services/sync/cloudSyncActivation.ts`) so service modules never
  * import from components. Existing component-side imports keep working.
  */
-export {
-  withCloudProviderEnabled,
-  persistCloudProviderEnabled,
-} from '@/services/sync/cloudSyncActivation';
+export { persistCloudProviderEnabled } from '@/services/sync/cloudSyncActivation';

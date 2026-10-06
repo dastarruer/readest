@@ -111,7 +111,7 @@ export const DEFAULT_READWISE_SETTINGS = {
   includeCoverImage: true,
 } as ReadwiseSettings;
 
-export const DEFAULT_HARDCOVER_SETTINGS = {
+const DEFAULT_HARDCOVER_SETTINGS = {
   enabled: false,
   accessToken: '',
   lastSyncedAt: 0,
@@ -130,7 +130,7 @@ export const DEFAULT_PAGEBOUND_SETTINGS = {
 export const NOTION_API_BASE_URL = 'https://api.notion.com/v1';
 export const NOTION_API_VERSION = '2026-03-11';
 
-export const DEFAULT_NOTION_SETTINGS = {
+const DEFAULT_NOTION_SETTINGS = {
   enabled: false,
   accessToken: '',
   databaseId: '',
@@ -152,7 +152,7 @@ export const DEFAULT_WEBDAV_SETTINGS = {
   lastSyncedAt: 0,
 } as WebDAVSettings;
 
-export const DEFAULT_GOOGLE_DRIVE_SETTINGS = {
+const DEFAULT_GOOGLE_DRIVE_SETTINGS = {
   enabled: false,
   syncProgress: true,
   syncNotes: true,
@@ -162,7 +162,7 @@ export const DEFAULT_GOOGLE_DRIVE_SETTINGS = {
   lastSyncedAt: 0,
 } as GoogleDriveSettings;
 
-export const DEFAULT_S3_SETTINGS = {
+const DEFAULT_S3_SETTINGS = {
   enabled: false,
   endpoint: '',
   region: 'auto',
@@ -177,7 +177,7 @@ export const DEFAULT_S3_SETTINGS = {
   lastSyncedAt: 0,
 } as S3Settings;
 
-export const DEFAULT_ONEDRIVE_SETTINGS = {
+const DEFAULT_ONEDRIVE_SETTINGS = {
   enabled: false,
   syncProgress: true,
   syncNotes: true,
@@ -187,7 +187,7 @@ export const DEFAULT_ONEDRIVE_SETTINGS = {
   lastSyncedAt: 0,
 } as OneDriveSettings;
 
-export const DEFAULT_ICLOUD_SETTINGS = {
+const DEFAULT_ICLOUD_SETTINGS = {
   enabled: false,
   syncProgress: true,
   syncNotes: true,

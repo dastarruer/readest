@@ -52,6 +52,6 @@ export const isSyncError = (e: unknown): e is SyncError =>
 export const isWrongPassphraseError = (e: unknown): boolean =>
   isSyncError(e) && (e.code === 'DECRYPT' || e.code === 'INTEGRITY');
 
-export const assertNever = (x: never): never => {
+const assertNever = (x: never): never => {
   throw new SyncError('VALIDATION', `Unexpected value: ${JSON.stringify(x)}`);
 };

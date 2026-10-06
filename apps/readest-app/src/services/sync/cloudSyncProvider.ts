@@ -97,7 +97,7 @@ export const setCachedUserPlan = (plan: UserPlan | undefined): void => {
   cachedUserPlan = plan ?? 'free';
 };
 
-export const getCachedUserPlan = (): UserPlan => cachedUserPlan;
+const getCachedUserPlan = (): UserPlan => cachedUserPlan;
 
 /**
  * Cached alongside the plan for the same reason: premium access is now the
@@ -111,7 +111,7 @@ export const setCachedCustomizationPurchased = (purchased: boolean | undefined):
   cachedCustomizationPurchased = purchased ?? false;
 };
 
-export const getCachedCustomizationPurchased = (): boolean => cachedCustomizationPurchased;
+const getCachedCustomizationPurchased = (): boolean => cachedCustomizationPurchased;
 
 export interface CloudSyncGate {
   /** Readest Cloud syncs the library channels (rows, progress, notes, files). */

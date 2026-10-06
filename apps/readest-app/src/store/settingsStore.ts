@@ -6,7 +6,7 @@ import { EnvConfigType } from '@/services/environment';
 import { initDayjs } from '@/utils/time';
 import { broadcastGlobalSettings } from '@/utils/settingsSync';
 
-export type FontPanelView = 'main-fonts' | 'custom-fonts';
+type FontPanelView = 'main-fonts' | 'custom-fonts';
 
 interface SettingsState {
   settings: SystemSettings;

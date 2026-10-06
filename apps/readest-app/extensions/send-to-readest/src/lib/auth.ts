@@ -24,13 +24,13 @@ export async function readToken(): Promise<StoredToken | null> {
   return { token, capturedAt: typeof at === 'number' ? at : 0 };
 }
 
-export async function writeToken(token: string): Promise<void> {
+async function writeToken(token: string): Promise<void> {
   await chrome.storage.local.set({
     [TOKEN_KEY]: token,
     [TOKEN_AT_KEY]: Date.now(),
   });
 }
 
-export async function clearToken(): Promise<void> {
+async function clearToken(): Promise<void> {
   await chrome.storage.local.remove([TOKEN_KEY, TOKEN_AT_KEY]);
 }

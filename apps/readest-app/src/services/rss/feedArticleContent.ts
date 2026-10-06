@@ -3,7 +3,7 @@ import { sanitizeHtml, sanitizeForParsing } from '@/utils/sanitize';
 import type { FileSystem } from '@/types/system';
 import type { RssFeedItem } from '@/types/rss';
 
-export const MIN_FEED_CONTENT = 200;
+const MIN_FEED_CONTENT = 200;
 
 function escapeHtml(s: string): string {
   return s
@@ -38,7 +38,7 @@ export function extractArticle(pageHtml: string, url: string): string {
   return sanitizeHtml(parts.join('\n'));
 }
 
-export function articleCachePath(feedHash: string, id: string): string {
+function articleCachePath(feedHash: string, id: string): string {
   return `${feedHash}/articles/${encodeURIComponent(id)}.html`;
 }
 

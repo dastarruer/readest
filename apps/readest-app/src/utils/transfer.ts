@@ -2,7 +2,7 @@ import { invoke, Channel } from '@tauri-apps/api/core';
 
 export type UploadMethod = 'POST' | 'PUT';
 
-export const enum UploadFileError {
+const enum UploadFileError {
   Unauthorized = 'Unauthorized access',
   DownloadFailed = 'File download failed',
 }

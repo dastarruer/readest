@@ -381,7 +381,7 @@ const migratePairedAudiobook = async (
  * paired audio must be durable in the survivor directory before a duplicate
  * directory can be removed.
  */
-export async function mergeBooks(
+async function mergeBooks(
   fs: FileSystem,
   books: Book[],
   book: Book,

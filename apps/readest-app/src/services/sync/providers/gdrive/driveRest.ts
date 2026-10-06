@@ -25,10 +25,10 @@ export const FILES_ENDPOINT = 'https://www.googleapis.com/drive/v3/files';
  * Drive splits metadata operations from media transfer onto the `/upload/...`
  * path, so the byte-carrying POST/PATCH requests target this base URL.
  */
-export const UPLOAD_ENDPOINT = 'https://www.googleapis.com/upload/drive/v3/files';
+const UPLOAD_ENDPOINT = 'https://www.googleapis.com/upload/drive/v3/files';
 
 /** Drive REST endpoint for account info (`about.get`) — used to label the account. */
-export const ABOUT_ENDPOINT = 'https://www.googleapis.com/drive/v3/about';
+const ABOUT_ENDPOINT = 'https://www.googleapis.com/drive/v3/about';
 
 /** MIME type Drive assigns to folders; the marker we use to tell folders from blobs. */
 export const FOLDER_MIME = 'application/vnd.google-apps.folder';

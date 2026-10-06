@@ -278,7 +278,7 @@ export const backfillAbsCovers = async (appService: AppService): Promise<void> =
 };
 
 /** Orchestrates: fetch, reconcile, apply to the library store, download missing covers. */
-export const syncAbsServer = async (appService: AppService, server: ABSServer): Promise<void> => {
+const syncAbsServer = async (appService: AppService, server: ABSServer): Promise<void> => {
   const client = createAbsClient(appService, server);
 
   const libraries = (await client.getLibraries()).filter(

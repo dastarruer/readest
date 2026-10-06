@@ -12,7 +12,7 @@ export { MAX_PUSH_BATCH } from '@/types/replica';
 // pathological queries.
 export const MAX_PULL_BATCH = 50;
 
-export interface PushReplicasBody {
+interface PushReplicasBody {
   rows: ReplicaRow[];
 }
 
@@ -96,7 +96,7 @@ export const validatePushBatch = (body: unknown, userId: string, nowMs: number):
   return { ok: true, rows };
 };
 
-export interface PullParams {
+interface PullParams {
   kind: string;
   since: Hlc | null;
 }
@@ -126,12 +126,12 @@ export const validatePullParams = (kind: string | null, since: string | null): P
   };
 };
 
-export interface PullBatchEntry {
+interface PullBatchEntry {
   kind: string;
   since: Hlc | null;
 }
 
-export interface PullBatchBody {
+interface PullBatchBody {
   cursors: PullBatchEntry[];
 }
 

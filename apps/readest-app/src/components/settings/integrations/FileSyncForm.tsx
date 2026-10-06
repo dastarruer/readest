@@ -21,7 +21,7 @@ import type { KOSyncStrategy } from '@/types/settings';
 import { BoxedList, SettingsRow, SettingsSelect, SettingsSwitchRow } from '../primitives';
 
 /** The settings fields the shared sync controls read/write (WebDAV + Drive share these). */
-export interface FileSyncFormSettings {
+interface FileSyncFormSettings {
   enabled?: boolean;
   syncBooks?: boolean;
   fullSync?: boolean;

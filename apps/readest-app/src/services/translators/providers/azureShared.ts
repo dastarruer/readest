@@ -10,11 +10,11 @@
  * is now taken from the www.bing.com/translator page the same way the Bing
  * Translator frontend does.
  */
-export const BING_ORIGIN = 'https://www.bing.com';
+const BING_ORIGIN = 'https://www.bing.com';
 export const BING_TRANSLATOR_URL = `${BING_ORIGIN}/translator`;
 export const BING_TRANSLATE_PATH = '/ttranslatev3';
 export const BING_TRANSLATE_URL = `${BING_ORIGIN}${BING_TRANSLATE_PATH}`;
-export const BING_USER_AGENT =
+const BING_USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
   'Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0';
 export const BING_REQUEST_HEADERS = {

@@ -22,7 +22,7 @@ export const toWordLensSource = (lang?: string | null): string | null => {
  * with the bundled OpenCC tables: Taiwan gets its phrase table (软件 → 軟體),
  * Hong Kong / Macau the HK table, plain zh-Hant the character-only conversion.
  */
-export const glossChineseVariant = (hintTag: string): ConvertChineseVariant | null => {
+const glossChineseVariant = (hintTag: string): ConvertChineseVariant | null => {
   const subtags = hintTag.toLowerCase().split('-');
   if (subtags[0] !== 'zh') return null;
   const region = subtags[subtags.length - 1]; // zh-TW and zh-Hant-TW both end in tw

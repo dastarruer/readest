@@ -14,9 +14,9 @@ import path from 'node:path';
 
 const FIXTURES_DIR = path.resolve(__dirname, '../../fixtures/data/dicts');
 
-export const IFO_FIXTURE_PATH = path.join(FIXTURES_DIR, 'cmudict.ifo');
-export const IDX_FIXTURE_PATH = path.join(FIXTURES_DIR, 'cmudict.idx');
-export const DICT_FIXTURE_PATH = path.join(FIXTURES_DIR, 'cmudict.dict.dz');
+const IFO_FIXTURE_PATH = path.join(FIXTURES_DIR, 'cmudict.ifo');
+const IDX_FIXTURE_PATH = path.join(FIXTURES_DIR, 'cmudict.idx');
+const DICT_FIXTURE_PATH = path.join(FIXTURES_DIR, 'cmudict.dict.dz');
 
 export const IFO_FIXTURE_NAME = 'cmudict.ifo';
 export const IDX_FIXTURE_NAME = 'cmudict.idx';

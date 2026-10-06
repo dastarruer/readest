@@ -75,7 +75,7 @@ function relScore(rel: string): number {
 }
 
 /** Extract candidate icon URLs from a parsed HTML document. */
-export function extractIconCandidates(doc: Document, pageUrl: string): IconCandidate[] {
+function extractIconCandidates(doc: Document, pageUrl: string): IconCandidate[] {
   const candidates: IconCandidate[] = [];
   for (const link of Array.from(doc.querySelectorAll('link[rel]'))) {
     const rel = link.getAttribute('rel') ?? '';

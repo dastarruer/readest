@@ -17,7 +17,7 @@ interface CloudflareEnv {
 
 const TELEMETRY_TAG = 'iap-webhook';
 
-export type IapWebhookOutcome = 'handled' | 'skipped' | 'rejected' | 'error';
+type IapWebhookOutcome = 'handled' | 'skipped' | 'rejected' | 'error';
 
 export interface IapWebhookEvent {
   provider: 'apple' | 'google';

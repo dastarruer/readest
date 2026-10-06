@@ -148,7 +148,7 @@ export async function uploadReplicaFileToCloud(
 
 // Cloud key for a replica binary. Centralized so adapters and the
 // download path share the same path-construction rule.
-export const replicaCloudKey = (kind: string, replicaId: string, filename: string): string =>
+const replicaCloudKey = (kind: string, replicaId: string, filename: string): string =>
   `${CLOUD_REPLICAS_SUBDIR}/${kind}/${replicaId}/${filename}`;
 
 export async function downloadReplicaFileFromCloud(

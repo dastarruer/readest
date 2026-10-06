@@ -27,7 +27,7 @@ const AUDIO_FORMATS = ['ABS', 'OPDSAUDIO', 'BOOKORBIT'];
 // Both copies matter: a metadata edit or a synced row can leave only one of them
 // (see src/utils/audiobook.ts), and reading just one misfiles podcasts as audiobooks.
 const absMediaType = (b: Book) => b.absMediaType ?? b.metadata?.absMediaType;
-export const BOOKSHELF_FIELDS: BookshelfField[] = [
+const BOOKSHELF_FIELDS: BookshelfField[] = [
   { id: 'title', label: _('Title'), kind: 'text', read: (b) => b.title },
   { id: 'author', label: _('Author'), kind: 'text', suggest: true, read: (b) => b.author },
   { id: 'subtitle', label: _('Subtitle'), kind: 'text', read: (b) => b.metadata?.subtitle },
@@ -203,7 +203,7 @@ export const BOOKSHELF_FIELDS: BookshelfField[] = [
     },
   },
 ];
-export const BOOKSHELF_OPERATORS: Record<BookshelfFieldKind, BookshelfOperator[]> = {
+const BOOKSHELF_OPERATORS: Record<BookshelfFieldKind, BookshelfOperator[]> = {
   text: ['contains', 'notContains', 'equals', 'notEquals', 'startsWith', 'set', 'unset'],
   collection: ['contains', 'notContains', 'set', 'unset'],
   number: ['equals', 'notEquals', 'gt', 'gte', 'lt', 'lte', 'set', 'unset'],
@@ -224,7 +224,7 @@ export const BOOKSHELF_OPERATOR_LABELS: Record<BookshelfOperator, string> = {
   set: _('Is set'),
   unset: _('Is not set'),
 };
-export const calibreFieldKind = (datatype: string, value?: unknown): BookshelfFieldKind => {
+const calibreFieldKind = (datatype: string, value?: unknown): BookshelfFieldKind => {
   if (Array.isArray(value)) return 'collection';
   if (['int', 'float', 'rating'].includes(datatype)) return 'number';
   if (datatype === 'bool') return 'boolean';

@@ -1,6 +1,6 @@
 import type { DatabaseRow, DatabaseService } from '@/types/database';
 
-export type DictionaryPluginGenerationState =
+type DictionaryPluginGenerationState =
   | 'staging'
   | 'active'
   | 'healthy'

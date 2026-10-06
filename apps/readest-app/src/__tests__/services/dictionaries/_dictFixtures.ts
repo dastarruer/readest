@@ -11,8 +11,8 @@ import path from 'node:path';
 
 const FIXTURES_DIR = path.resolve(__dirname, '../../fixtures/data/dicts');
 
-export const INDEX_FIXTURE_PATH = path.join(FIXTURES_DIR, 'freedict-eng-nld.index');
-export const DICT_FIXTURE_PATH = path.join(FIXTURES_DIR, 'freedict-eng-nld.dict.dz');
+const INDEX_FIXTURE_PATH = path.join(FIXTURES_DIR, 'freedict-eng-nld.index');
+const DICT_FIXTURE_PATH = path.join(FIXTURES_DIR, 'freedict-eng-nld.dict.dz');
 
 export const INDEX_FIXTURE_NAME = 'freedict-eng-nld.index';
 export const DICT_FIXTURE_NAME = 'freedict-eng-nld.dict.dz';

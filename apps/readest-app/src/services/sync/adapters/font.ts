@@ -10,7 +10,7 @@ import {
 } from './helpers';
 
 export const FONT_KIND = 'font';
-export const FONT_SCHEMA_VERSION = 1;
+const FONT_SCHEMA_VERSION = 1;
 
 interface UnwrappedFontFields {
   name?: string;

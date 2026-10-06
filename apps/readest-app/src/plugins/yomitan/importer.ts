@@ -22,7 +22,7 @@ import {
   type YomitanTermTuple,
 } from './schemas';
 
-export const YOMITAN_INDEX_VERSION = 2;
+const YOMITAN_INDEX_VERSION = 2;
 export const YOMITAN_PORTABLE_APPLICATION_ID = 0x52444954;
 const YOMITAN_PORTABLE_FORMAT_VERSION = 1;
 const SQLITE_HEADER = new TextEncoder().encode('SQLite format 3\0');

@@ -1,6 +1,6 @@
 import { QuotaFeature, UserPlan } from './quota';
 
-export type PaymentProvider = 'stripe' | 'apple' | 'google';
+type PaymentProvider = 'stripe' | 'apple' | 'google';
 
 export type PaymentStatus =
   | 'pending'
@@ -22,7 +22,7 @@ export interface StripeProductMetadata {
   customization?: string;
 }
 
-export interface BasePaymentData {
+interface BasePaymentData {
   user_id: string;
   provider: PaymentProvider;
   amount?: number; // in cents
@@ -53,4 +53,4 @@ export interface GooglePaymentData extends BasePaymentData {
   google_purchase_token: string;
 }
 
-export type PaymentData = StripePaymentData | ApplePaymentData | GooglePaymentData;
+type PaymentData = StripePaymentData | ApplePaymentData | GooglePaymentData;

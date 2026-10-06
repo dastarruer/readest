@@ -2,7 +2,7 @@ import { yomitanPluginManifest } from '@/plugins/yomitan/manifest';
 import type { PluginManifest } from './contract';
 import type { PluginWorkerLike } from './runtime';
 
-export type PluginWorkerRole = 'lookup' | 'build';
+type PluginWorkerRole = 'lookup' | 'build';
 
 export interface BundledPluginDefinition {
   manifest: PluginManifest;

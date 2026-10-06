@@ -76,7 +76,7 @@ interface SqlBrokerOptions {
   createHandle?: () => string;
 }
 
-export class PluginBrokerError extends Error {
+class PluginBrokerError extends Error {
   constructor(
     message: string,
     readonly code: string,

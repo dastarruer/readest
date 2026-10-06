@@ -4,7 +4,7 @@ import { INDETERMINATE_PROGRESS } from '@/utils/transfer';
 
 export type TransferType = 'upload' | 'download' | 'delete';
 export type TransferStatus = 'pending' | 'in_progress' | 'completed' | 'failed' | 'cancelled';
-export type TransferKind = 'book' | 'replica';
+type TransferKind = 'book' | 'replica';
 /**
  * Why a transfer was cancelled. 'user' = an explicit cancel action;
  * 'policy' = the app cancelled it because Readest Cloud is not the
@@ -13,7 +13,7 @@ export type TransferKind = 'book' | 'replica';
  * (retrying would either no-op against the provider gate or loop
  * cancel-retry-cancel), and they are pruned on the next restore.
  */
-export type TransferCancelReason = 'user' | 'policy';
+type TransferCancelReason = 'user' | 'policy';
 
 export interface ReplicaTransferFile {
   logical: string;

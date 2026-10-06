@@ -234,5 +234,3 @@ export const CommandPaletteProvider: React.FC<CommandPaletteProviderProps> = ({ 
 
   return <CommandPaletteContext.Provider value={value}>{children}</CommandPaletteContext.Provider>;
 };
-
-export default CommandPaletteProvider;

@@ -61,7 +61,7 @@ export interface S3ProviderConfig {
 export type S3FetchFn = (input: string, init?: RequestInit) => Promise<Response>;
 
 /** Injected sleep so the retry backoff is instant under test. */
-export type S3SleepFn = (ms: number) => Promise<void>;
+type S3SleepFn = (ms: number) => Promise<void>;
 
 export interface S3ProviderOptions {
   sleep?: S3SleepFn;

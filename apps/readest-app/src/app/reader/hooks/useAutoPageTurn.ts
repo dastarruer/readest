@@ -12,12 +12,12 @@ export const AUTO_TURN_DWELL_MS = 500;
 // (as a fraction of each axis). Kept tight so it is only the corner itself — a
 // larger/rectangular zone catches normal selections that end in the lower-right
 // of the page and turns the page unexpectedly.
-export const AUTO_TURN_CORNER_FRACTION = 0.15;
+const AUTO_TURN_CORNER_FRACTION = 0.15;
 // Hard ceiling on the corner radius in pixels. The fraction alone grows the zone
 // with the reading area, so on a wide screen (desktop, multi-column pages) it
 // reaches deep into the text and turns the page when a selection merely ends near
 // the edge. Cap each axis so the zone stays a corner regardless of page size.
-export const AUTO_TURN_CORNER_MAX_PX = 50;
+const AUTO_TURN_CORNER_MAX_PX = 50;
 
 export type Corner = 'br' | 'tl';
 export type Point = { x: number; y: number };
@@ -26,7 +26,7 @@ export type TurnHint = { corner: Corner; turned: boolean };
 
 // The subset of useTextSelector's return that drives the shared corner auto-turn,
 // passed to the range editors so their overlay handle drags turn the page too.
-export interface AutoTurnControls {
+interface AutoTurnControls {
   noteAutoTurnPoint: (point: Point | null) => void;
   cancelAutoTurn: () => void;
   onAutoTurn: (cb: (corner: Corner) => void) => () => void;

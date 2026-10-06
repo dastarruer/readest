@@ -171,7 +171,7 @@ export function getHandlePositionsFromRange(
  * section index the range landed in, or `null` when neither point maps
  * into the same document.
  */
-export function buildRangeFromPoints(
+function buildRangeFromPoints(
   view: FoliateView | null,
   startPoint: Point,
   endPoint: Point,

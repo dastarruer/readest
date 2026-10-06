@@ -6,7 +6,7 @@ const execFileAsync = promisify(execFile);
 // All commands honor ANDROID_SERIAL, so the lane works unchanged against a
 // physical device or an emulator — set the env var to pick one when several
 // devices are attached.
-export const adb = async (args: string[], timeoutMs = 30_000): Promise<string> => {
+const adb = async (args: string[], timeoutMs = 30_000): Promise<string> => {
   const { stdout } = await execFileAsync('adb', args, { timeout: timeoutMs });
   return stdout.toString();
 };
@@ -39,7 +39,7 @@ export const isPackageInstalled = async (pkg: string): Promise<boolean> => {
   return out.includes(`package:${pkg}`);
 };
 
-export const screenSize = async (): Promise<{ width: number; height: number }> => {
+const screenSize = async (): Promise<{ width: number; height: number }> => {
   const out = await adbShell('wm size');
   const m = out.match(/(\d+)x(\d+)/);
   if (!m) throw new Error(`cannot parse screen size from: ${out}`);

@@ -7,7 +7,7 @@
  * order; each provider writes lookup output into a per-tab container.
  */
 
-export type DictionaryProviderKind =
+type DictionaryProviderKind =
   | 'builtin'
   | 'stardict'
   | 'mdict'
@@ -259,7 +259,7 @@ export const BUILTIN_PROVIDER_IDS = {
   systemDictionary: 'builtin:system',
 } as const;
 
-export type BuiltinProviderId = (typeof BUILTIN_PROVIDER_IDS)[keyof typeof BUILTIN_PROVIDER_IDS];
+type BuiltinProviderId = (typeof BUILTIN_PROVIDER_IDS)[keyof typeof BUILTIN_PROVIDER_IDS];
 
 /**
  * Stable ids for the built-in web-search templates. The `web:builtin:*`
@@ -274,5 +274,4 @@ export const BUILTIN_WEB_SEARCH_IDS = {
   goodreads: 'web:builtin:goodreads',
 } as const;
 
-export type BuiltinWebSearchId =
-  (typeof BUILTIN_WEB_SEARCH_IDS)[keyof typeof BUILTIN_WEB_SEARCH_IDS];
+type BuiltinWebSearchId = (typeof BUILTIN_WEB_SEARCH_IDS)[keyof typeof BUILTIN_WEB_SEARCH_IDS];

@@ -29,7 +29,7 @@ export interface DrainResult {
 }
 
 /** How often to refresh a 15-minute lease during a long conversion/upload. */
-export const LEASE_RENEW_INTERVAL_MS = 5 * 60 * 1000;
+const LEASE_RENEW_INTERVAL_MS = 5 * 60 * 1000;
 
 /** Max items drained per pass, so a large backlog never freezes a sync cycle. */
 export const DEFAULT_MAX_ITEMS_PER_PASS = 5;

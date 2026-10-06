@@ -698,5 +698,3 @@ export const ProofreadRulesManager: React.FC = () => {
     </Dialog>
   );
 };
-
-export default ProofreadRulesManager;

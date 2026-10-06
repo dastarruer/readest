@@ -63,7 +63,7 @@ export const encryptPackedFields = async (
  * common case (no encrypted credentials on the row) skips the prompt
  * entirely.
  */
-export const rowHasCipherFields = (
+const rowHasCipherFields = (
   fields: FieldsObject,
   encryptedFields: readonly string[] | undefined,
 ): boolean => {

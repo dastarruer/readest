@@ -13,7 +13,7 @@ import type { ExchangeKey, KoAnnotation, KoBookmark } from './types';
 
 const MAX_CHANGES_PER_REQUEST = 50;
 
-export interface NotesSyncStore {
+interface NotesSyncStore {
   getIdentities(bookHash: string): Promise<Map<string, BookOrbitNoteIdentity>>;
   setIdentity(bookHash: string, noteId: string, identity: BookOrbitNoteIdentity): Promise<void>;
   getWatermark(bookHash: string, kind: BookOrbitWatermarkKind): Promise<number>;
@@ -21,7 +21,7 @@ export interface NotesSyncStore {
   flush(): Promise<void>;
 }
 
-export interface NotesPassBook {
+interface NotesPassBook {
   hash: string;
   title: string;
   author?: string;

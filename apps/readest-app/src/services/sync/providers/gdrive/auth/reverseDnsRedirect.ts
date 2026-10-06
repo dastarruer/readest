@@ -19,7 +19,7 @@
  * ingress filter detects and skips OAuth redirect URLs without restating the
  * literal.
  */
-export const GOOGLE_OAUTH_REDIRECT_SCHEME_PREFIX = 'com.googleusercontent.apps.';
+const GOOGLE_OAUTH_REDIRECT_SCHEME_PREFIX = 'com.googleusercontent.apps.';
 
 /** Suffix every Google OAuth client id ends with; stripped to form the scheme. */
 const GOOGLE_CLIENT_ID_SUFFIX = '.apps.googleusercontent.com';

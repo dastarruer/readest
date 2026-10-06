@@ -253,7 +253,7 @@ const normalizeValues = (values: string[]): string[] => [
   ...new Set(values.map((value) => value.trim()).filter(Boolean)),
 ];
 
-export const getBookSubjects = (book: Book): string[] => {
+const getBookSubjects = (book: Book): string[] => {
   return getContributorNames(book.metadata?.subject);
 };
 

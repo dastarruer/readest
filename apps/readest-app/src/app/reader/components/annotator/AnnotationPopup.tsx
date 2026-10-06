@@ -9,7 +9,7 @@ import AnnotationNoteEditor from './AnnotationNoteEditor';
 import AnnotationNotes from './AnnotationNotes';
 import HighlightOptions from './HighlightOptions';
 
-export interface AnnotationNoteEditorTarget {
+interface AnnotationNoteEditorTarget {
   value: string;
   onSave: (note: string) => void;
   onCancel: () => void;

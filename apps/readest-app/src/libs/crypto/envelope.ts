@@ -80,4 +80,4 @@ export const decryptFromEnvelope = async (
   return dec.decode(plain);
 };
 
-export const isSupportedAlg = (alg: string): boolean => SUPPORTED_ALGS.has(alg);
+const isSupportedAlg = (alg: string): boolean => SUPPORTED_ALGS.has(alg);

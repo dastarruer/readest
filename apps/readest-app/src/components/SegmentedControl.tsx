@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-export interface SegmentedControlOption<T extends string | number> {
+interface SegmentedControlOption<T extends string | number> {
   value: T;
   label: React.ReactNode;
   // Optional accessible label when `label` is a non-text node (icon, badge…).

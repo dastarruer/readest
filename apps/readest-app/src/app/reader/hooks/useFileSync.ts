@@ -656,5 +656,3 @@ export const useFileSync = (bookKey: string) => {
 
   return { pushNow, pullNow };
 };
-
-export default useFileSync;

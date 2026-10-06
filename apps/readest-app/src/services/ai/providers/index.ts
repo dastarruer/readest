@@ -3,8 +3,6 @@ import { AIGatewayProvider } from './AIGatewayProvider';
 import { OpenRouterProvider } from './OpenRouterProvider';
 import type { AIProvider, AISettings } from '../types';
 
-export { OllamaProvider, AIGatewayProvider, OpenRouterProvider };
-
 export function getAIProvider(settings: AISettings): AIProvider {
   switch (settings.provider) {
     case 'ollama':

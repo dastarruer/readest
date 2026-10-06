@@ -25,12 +25,12 @@
  *   - When `items` is empty the function resolves immediately with `[]`
  *     without spawning a worker.
  */
-export interface ConcurrencyTaskSuccess<T, R> {
+interface ConcurrencyTaskSuccess<T, R> {
   item: T;
   result: R;
 }
 
-export interface ConcurrencyTaskFailure<T> {
+interface ConcurrencyTaskFailure<T> {
   item: T;
   error: unknown;
 }

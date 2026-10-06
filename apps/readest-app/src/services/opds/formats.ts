@@ -104,7 +104,7 @@ const inferMediaType = (link: FormatLink): string => {
   return '';
 };
 
-export const getEffectiveMediaType = (link: FormatLink): string => {
+const getEffectiveMediaType = (link: FormatLink): string => {
   const declared = parseMediaType(link.type)?.mediaType ?? '';
   // Treat octet-stream as "the server didn't actually tell us" -- most
   // OPDS feeds emit a real media type for known formats, and falling back

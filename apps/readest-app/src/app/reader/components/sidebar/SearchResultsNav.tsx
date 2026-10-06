@@ -77,7 +77,7 @@ export function flattenSearchResults(
 }
 
 // Helper function to find the index of current result based on CFI
-export function findCurrentResultIndex(
+function findCurrentResultIndex(
   flattenedResults: { cfi: string; sectionLabel: string }[],
   currentLocation: string | undefined,
 ): number {

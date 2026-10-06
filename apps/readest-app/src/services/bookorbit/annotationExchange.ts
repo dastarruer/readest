@@ -57,7 +57,7 @@ export const buildAnnotationExchangeBook = (
   return { request: { hash, keys, keysComplete: true, changes }, keyToNote };
 };
 
-export interface ResolvedPosition {
+interface ResolvedPosition {
   cfi: string;
   page?: number;
   /** True when the resolved range's text matches the server's text (or there is nothing to compare). */

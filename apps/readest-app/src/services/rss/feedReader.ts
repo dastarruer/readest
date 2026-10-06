@@ -64,7 +64,7 @@ export async function refreshFeedManifest(
   return updated;
 }
 
-export async function buildFeedBookDoc(
+async function buildFeedBookDoc(
   fs: FileSystem,
   feedHash: string,
   manifest: FeedManifest,

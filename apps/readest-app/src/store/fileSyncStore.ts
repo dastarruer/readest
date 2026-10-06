@@ -23,7 +23,7 @@ import type { FileSyncBackendKind } from '@/services/sync/file/providerRegistry'
  * (the per-book reader hook tracks its own refs and surfaces no button), and it
  * is process-local — never persisted, so an app killed mid-sync starts fresh.
  */
-export interface ProviderSyncProgress {
+interface ProviderSyncProgress {
   /** True while this backend's library-wide Sync now is running. */
   isSyncing: boolean;
   /** Localised status line (e.g. "Uploading 3 / 12"), or null when idle. */
@@ -153,7 +153,7 @@ export const useFileSyncStore = create<FileSyncState>((set, get) => ({
 }));
 
 /** Per-backend progress, idle when the backend has never started a run. */
-export const selectProviderSyncProgress =
+const selectProviderSyncProgress =
   (kind: FileSyncBackendKind) =>
   (state: FileSyncState): ProviderSyncProgress =>
     state.byKind[kind] ?? IDLE;

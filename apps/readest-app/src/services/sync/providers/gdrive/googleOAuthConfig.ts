@@ -11,7 +11,7 @@ import {
 import type { OAuthClientConfig } from '@/services/sync/providers/oauth/oauthFlow';
 
 /** Google's OAuth 2.0 authorization endpoint (the page where the user consents). */
-export const GOOGLE_AUTH_ENDPOINT = 'https://accounts.google.com/o/oauth2/v2/auth';
+const GOOGLE_AUTH_ENDPOINT = 'https://accounts.google.com/o/oauth2/v2/auth';
 /** Google's OAuth 2.0 token endpoint (exchanges/refreshes tokens). */
 export const GOOGLE_TOKEN_ENDPOINT = 'https://oauth2.googleapis.com/token';
 

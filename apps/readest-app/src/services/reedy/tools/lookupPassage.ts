@@ -8,7 +8,7 @@ import type { EmbeddingModel } from '../models/EmbeddingModel';
  * BookRetriever plus the tool-only `budget_exceeded` flag that fires when
  * the assistant turn has already spent its per-turn retrieval wall-clock.
  */
-export type LookupToolStatus = RetrieverStatus | 'budget_exceeded';
+type LookupToolStatus = RetrieverStatus | 'budget_exceeded';
 
 export interface LookupPassage {
   cfi: string;

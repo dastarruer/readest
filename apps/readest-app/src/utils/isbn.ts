@@ -1,7 +1,7 @@
 import { BookDoc } from '@/libs/document';
 import { validateISBN } from '@/utils/validation';
 
-export const extractIsbnCandidates = (value: unknown): string[] => {
+const extractIsbnCandidates = (value: unknown): string[] => {
   if (!value) return [];
 
   if (Array.isArray(value)) {

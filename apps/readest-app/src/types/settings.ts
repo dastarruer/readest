@@ -11,7 +11,7 @@ import type { AISettings } from '@/services/ai/types';
 import type { NotebookTab } from '@/store/notebookStore';
 import type { DictionarySettings, ImportedDictionary } from '@/services/dictionaries/types';
 
-export type ThemeType = 'light' | 'dark' | 'auto';
+type ThemeType = 'light' | 'dark' | 'auto';
 export type LibraryViewModeType = 'grid' | 'list';
 export const LibrarySortByType = {
   Title: 'title',
@@ -335,7 +335,7 @@ export interface ICloudSettings {
  *
  * Device-local, like the other providers' `enabled` flags.
  */
-export interface ReadestCloudSettings {
+interface ReadestCloudSettings {
   enabled?: boolean;
   /**
    * Device-local wall-clock millis of when this device turned Readest Cloud

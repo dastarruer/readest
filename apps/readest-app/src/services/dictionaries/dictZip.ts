@@ -22,7 +22,7 @@ const GZIP_MAGIC = [0x1f, 0x8b];
 const isGzip = (bytes: Uint8Array): boolean =>
   bytes.length >= 2 && bytes[0] === GZIP_MAGIC[0] && bytes[1] === GZIP_MAGIC[1];
 
-export interface DictZipMeta {
+interface DictZipMeta {
   /** Uncompressed bytes per chunk (last may be shorter). */
   chlen: number;
   /** Compressed bytes per chunk; sums to `compressedDataSize`. */
@@ -35,7 +35,7 @@ export interface DictZipMeta {
  * Parse the gzip header + FEXTRA RA subfield. Returns `null` for non-gzip
  * files or gzip files without an RA subfield (those need whole-file gunzip).
  */
-export function parseDictZipHeader(bytes: Uint8Array): DictZipMeta | null {
+function parseDictZipHeader(bytes: Uint8Array): DictZipMeta | null {
   if (bytes.length < 12 || bytes[0] !== 0x1f || bytes[1] !== 0x8b || bytes[2] !== 0x08) {
     return null;
   }
@@ -89,7 +89,7 @@ export function parseDictZipHeader(bytes: Uint8Array): DictZipMeta | null {
  * would reject), so we push with `final=false` and capture the data emitted
  * by `ondata`. Returns `null` on failure.
  */
-export function inflateChunkStreaming(chunkBytes: Uint8Array): Uint8Array | null {
+function inflateChunkStreaming(chunkBytes: Uint8Array): Uint8Array | null {
   let result: Uint8Array | null = null;
   try {
     const inf = new Inflate();

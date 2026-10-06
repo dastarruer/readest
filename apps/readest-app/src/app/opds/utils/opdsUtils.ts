@@ -35,7 +35,7 @@ export const getSafeDOMParserMimeType = (mimeType: string): DOMParserSupportedTy
     ? (MIME.XML as DOMParserSupportedType)
     : (mimeType as DOMParserSupportedType);
 
-export const enum VALIDATION_ERROR {
+const enum VALIDATION_ERROR {
   INVALID_URL = 'Invalid URL format',
   LOAD_FAILED = 'Failed to load OPDS feed',
   NOT_OPDS = 'Invalid OPDS feed URL',

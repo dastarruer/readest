@@ -6,9 +6,9 @@ import type { ReplicaRow } from '@/types/replica';
 import { parsePluginDictionaryMetadata } from '@/services/dictionaries/plugins/record';
 
 export const DICTIONARY_KIND = 'dictionary';
-export const DICTIONARY_SCHEMA_VERSION = 1;
+const DICTIONARY_SCHEMA_VERSION = 1;
 
-export interface DictionarySyncedFields {
+interface DictionarySyncedFields {
   name: string;
   kind: ImportedDictionary['kind'];
   lang?: string;

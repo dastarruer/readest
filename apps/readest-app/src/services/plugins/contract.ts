@@ -5,8 +5,8 @@ export const MAX_PLUGIN_RESOURCE_BYTES = 4 * 1_024 * 1_024;
 export const MAX_PLUGIN_SQL_PARAMS = 9_000;
 export const MAX_PLUGIN_SQL_PARAMETER_BYTES = MAX_PLUGIN_RESOURCE_BYTES;
 export const MAX_PLUGIN_SQL_REQUEST_BYTES = MAX_PLUGIN_RESOURCE_BYTES * 2;
-export const MAX_PLUGIN_ERROR_CODE_LENGTH = 128;
-export const MAX_PLUGIN_ERROR_MESSAGE_LENGTH = 4_000;
+const MAX_PLUGIN_ERROR_CODE_LENGTH = 128;
+const MAX_PLUGIN_ERROR_MESSAGE_LENGTH = 4_000;
 
 const identifierSchema = z
   .string()
@@ -16,7 +16,7 @@ const identifierSchema = z
 
 const opaqueHandleSchema = z.string().min(1).max(256);
 
-export const dictionaryFormatContributionSchema = z.strictObject({
+const dictionaryFormatContributionSchema = z.strictObject({
   id: identifierSchema,
   extensions: z
     .array(z.string().regex(/^[a-z0-9]+$/u))
@@ -119,7 +119,7 @@ export const pluginRequestSchema = z.discriminatedUnion('operation', [
 
 export type PluginRequest = z.infer<typeof pluginRequestSchema>;
 export type PluginOperation = PluginRequest['operation'];
-export type PluginRequestFor<T extends PluginOperation> = Extract<PluginRequest, { operation: T }>;
+type PluginRequestFor<T extends PluginOperation> = Extract<PluginRequest, { operation: T }>;
 export type PluginPayload<T extends PluginOperation> = PluginRequestFor<T>['payload'];
 
 const dictionaryTextNodeSchema = z.strictObject({
@@ -275,7 +275,7 @@ export const dictionaryLookupEntrySchema = z.strictObject({
   definitions: z.array(dictionaryContentNodeSchema).max(2_000),
 });
 
-export const dictionaryLookupResultSchema = z.strictObject({
+const dictionaryLookupResultSchema = z.strictObject({
   entries: z.array(dictionaryLookupEntrySchema).max(128),
 });
 
@@ -362,7 +362,7 @@ const readResourceResultSchema = z.strictObject({
   bytes: resourceBytesSchema,
 });
 
-export interface PluginResultByOperation {
+interface PluginResultByOperation {
   probe: z.infer<typeof probeResultSchema>;
   inspect: z.infer<typeof inspectResultSchema>;
   buildIndex: z.infer<typeof buildIndexResultSchema>;
@@ -438,7 +438,7 @@ const pluginErrorResponseSchema = z.strictObject({
   error: errorPayloadSchema,
 });
 
-export const pluginResponseSchema = z.discriminatedUnion('ok', [
+const pluginResponseSchema = z.discriminatedUnion('ok', [
   pluginSuccessResponseSchema,
   pluginErrorResponseSchema,
 ]);
@@ -610,7 +610,7 @@ const hostErrorResultSchema = z.strictObject({
   error: errorPayloadSchema,
 });
 
-export const pluginHostResultSchema = z.discriminatedUnion('ok', [
+const pluginHostResultSchema = z.discriminatedUnion('ok', [
   hostSuccessResultSchema,
   hostErrorResultSchema,
 ]);
@@ -627,8 +627,8 @@ export const pluginWorkerOutboundMessageSchema = z.union([
   progressMessageSchema,
 ]);
 
-export type PluginResponse = z.infer<typeof pluginResponseSchema>;
+type PluginResponse = z.infer<typeof pluginResponseSchema>;
 export type PluginProgress = z.infer<typeof progressMessageSchema>;
-export type PluginHostResult = z.infer<typeof pluginHostResultSchema>;
+type PluginHostResult = z.infer<typeof pluginHostResultSchema>;
 export type PluginWorkerInboundMessage = z.infer<typeof pluginWorkerInboundMessageSchema>;
 export type PluginWorkerOutboundMessage = z.infer<typeof pluginWorkerOutboundMessageSchema>;

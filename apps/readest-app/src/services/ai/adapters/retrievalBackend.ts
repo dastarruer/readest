@@ -3,7 +3,7 @@ import type { BookDoc } from '@/libs/document';
 import type { AISettings, EmbeddingProgress, ScoredChunk } from '../types';
 import type { ReedySourceStore } from './reedySourceStore';
 
-export type RetrievalBackendKind = 'legacy-idb' | 'reedy';
+type RetrievalBackendKind = 'legacy-idb' | 'reedy';
 
 export interface BackendIndexOptions {
   onProgress?: (progress: EmbeddingProgress) => void;

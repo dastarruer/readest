@@ -5,7 +5,7 @@ import { parseFeed } from './feedParser';
 import { discoverFeedUrls } from './feedDiscovery';
 import type { ParsedFeed } from '@/types/rss';
 
-export async function fetchFeedText(url: string): Promise<string> {
+async function fetchFeedText(url: string): Promise<string> {
   const doFetch = isTauriAppPlatform() ? tauriFetch : window.fetch;
   const target = !isTauriAppPlatform() && needsProxy(url) ? getProxiedURL(url) : url;
   const res = await doFetch(target, { method: 'GET' });

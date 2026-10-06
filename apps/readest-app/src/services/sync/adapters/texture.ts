@@ -10,7 +10,7 @@ import {
 } from './helpers';
 
 export const TEXTURE_KIND = 'texture';
-export const TEXTURE_SCHEMA_VERSION = 1;
+const TEXTURE_SCHEMA_VERSION = 1;
 
 interface UnwrappedTextureFields {
   name?: string;

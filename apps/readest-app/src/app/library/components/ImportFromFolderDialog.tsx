@@ -20,14 +20,14 @@ import WatchedFoldersPane, { type WatchedFolder } from './WatchedFoldersPane';
  * of users coming from the prior screenshot still works (EPUB and PDF
  * first, common eBook formats in the middle, archives at the end).
  */
-export interface FormatGroup {
+interface FormatGroup {
   id: string;
   label: string;
   /** lower-case extensions without the leading dot. */
   exts: string[];
 }
 
-export const DEFAULT_FORMAT_GROUPS: FormatGroup[] = [
+const DEFAULT_FORMAT_GROUPS: FormatGroup[] = [
   { id: 'epub', label: 'EPUB', exts: ['epub'] },
   { id: 'pdf', label: 'PDF', exts: ['pdf'] },
   { id: 'mobi', label: 'MOBI/AZW/AZW3', exts: ['mobi', 'azw', 'azw3'] },

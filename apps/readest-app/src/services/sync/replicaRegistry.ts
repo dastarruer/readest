@@ -1,12 +1,12 @@
 import type { ReplicaRow } from '@/types/replica';
 import type { BaseDir, FileSystem } from '@/types/system';
 
-export interface BinaryCapability<T> {
+interface BinaryCapability<T> {
   localBaseDir: BaseDir;
   enumerateFiles(replica: T): { logical: string; lfp: string; byteSize: number }[];
 }
 
-export interface LifecycleHooks<T> {
+interface LifecycleHooks<T> {
   postDownload?(replica: T, fs: FileSystem): Promise<void>;
   validateOnLoad?(replica: T, fs: FileSystem): Promise<{ unavailable?: boolean }>;
 }

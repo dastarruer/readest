@@ -37,7 +37,7 @@ import { exchangeCode, type FetchFn, type TokenSet } from './tokenEndpoint';
  * connects never spawn a second window), short enough that the silent
  * already-running-browser failure is recovered without the user feeling stuck.
  */
-export const DEFAULT_FALLBACK_DELAY_MS = 25_000;
+const DEFAULT_FALLBACK_DELAY_MS = 25_000;
 
 /**
  * Hard deadline after which an unfinished connect gives up and REJECTS, so the
@@ -46,7 +46,7 @@ export const DEFAULT_FALLBACK_DELAY_MS = 25_000;
  * sign-in would hang forever. Deliberately generous: a real sign-in (account
  * pick + password + 2FA, in a session-less window) can take many minutes.
  */
-export const CONNECT_DEADLINE_MS = 15 * 60_000;
+const CONNECT_DEADLINE_MS = 15 * 60_000;
 
 /** Native command that opens a URL in a freshly-spawned, isolated browser. */
 const SPAWN_FRESH_BROWSER_COMMAND = 'spawn_fresh_browser';
@@ -121,7 +121,7 @@ const subscribeRedirectsViaTauri = async (onUrl: (url: string) => void): Promise
 };
 
 /** Production desktop deps, bound to the real Tauri plugins. */
-export const defaultDesktopDeepLinkDeps: DesktopDeepLinkDeps = {
+const defaultDesktopDeepLinkDeps: DesktopDeepLinkDeps = {
   openDefaultBrowser: (url) => openUrl(url),
   spawnFreshBrowser: (url) => invoke<void>(SPAWN_FRESH_BROWSER_COMMAND, { url }),
   subscribeRedirects: subscribeRedirectsViaTauri,

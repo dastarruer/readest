@@ -22,7 +22,7 @@ import {
 } from '@/utils/audiobook';
 import { getBaseFilename } from '@/utils/path';
 
-export const ABS_PAIRED_FILE_ID = 'abs';
+const ABS_PAIRED_FILE_ID = 'abs';
 
 /** Everything the wizard needs before the user maps chapters. */
 export interface AbsPairingSource {

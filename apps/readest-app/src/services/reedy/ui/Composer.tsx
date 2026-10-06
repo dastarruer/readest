@@ -9,7 +9,7 @@ import { Send, Square, WandSparkles } from 'lucide-react';
  * touches these fields, so we declare locally to avoid a cross-branch
  * dependency.
  */
-export interface ComposerSkill {
+interface ComposerSkill {
   id: string;
   name: string;
   description: string;

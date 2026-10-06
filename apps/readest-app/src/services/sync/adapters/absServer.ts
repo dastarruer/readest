@@ -5,7 +5,7 @@ import type { FieldsObject, ReplicaRow } from '@/types/replica';
 import { defaultComputeId, unwrap } from './helpers';
 
 export const ABS_SERVER_KIND = 'abs_server';
-export const ABS_SERVER_SCHEMA_VERSION = 1;
+const ABS_SERVER_SCHEMA_VERSION = 1;
 
 /** Stable cross-device identity; normalized like computeOpdsCatalogContentId. */
 export const computeAbsServerContentId = (url: string): string =>

@@ -36,7 +36,7 @@ export interface NavigateResult {
   reason?: string;
 }
 
-export interface CreateHighlightArgs {
+interface CreateHighlightArgs {
   cfi: string;
   endCfi?: string;
   text: string;
@@ -44,7 +44,7 @@ export interface CreateHighlightArgs {
   note?: string;
 }
 
-export interface CreateNoteArgs {
+interface CreateNoteArgs {
   cfi: string;
   endCfi?: string;
   quotedText: string;

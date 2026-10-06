@@ -67,7 +67,7 @@ const getDeviceId = (): string => {
   }
 };
 
-export class ABSRequestError extends Error {
+class ABSRequestError extends Error {
   status: number;
   constructor(status: number, path: string) {
     super(`Audiobookshelf request to ${path} failed with status ${status}`);
@@ -76,7 +76,7 @@ export class ABSRequestError extends Error {
   }
 }
 
-export class ABSAuthError extends Error {
+class ABSAuthError extends Error {
   status: number;
   constructor(status: number, path: string) {
     super(`Audiobookshelf authentication failed for ${path} with status ${status}`);

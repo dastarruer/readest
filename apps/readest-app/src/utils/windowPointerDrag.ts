@@ -16,7 +16,7 @@ export interface Frame {
   height: number;
 }
 
-export const MIN_WINDOW_SIZE = { width: 400, height: 300 };
+const MIN_WINDOW_SIZE = { width: 400, height: 300 };
 
 /** New window frame for dragging `edge` by `delta`; moving edges stay under the pointer down to `min`. */
 export const computeResizedFrame = (

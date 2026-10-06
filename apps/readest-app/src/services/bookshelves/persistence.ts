@@ -118,7 +118,7 @@ export const saveBookshelfDraft = async (
   await persistState(env, state);
   await publishPendingBookshelves(env, userId);
 };
-export const updateBookshelf = async (
+const updateBookshelf = async (
   env: EnvConfigType,
   id: string,
   update: (shelf: BookshelfDefinition) => BookshelfDefinition,

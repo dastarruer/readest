@@ -12,7 +12,7 @@
  * import the same constants and apply them on its own outbound fetches.
  */
 
-export const BROWSER_UA =
+const BROWSER_UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
   '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
 

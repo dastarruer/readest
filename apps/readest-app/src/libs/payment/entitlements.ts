@@ -15,8 +15,7 @@ const PLAN_RANK: Record<UserPlan, number> = {
   pro: 2,
 };
 
-export const higherPlan = (a: UserPlan, b: UserPlan): UserPlan =>
-  PLAN_RANK[b] > PLAN_RANK[a] ? b : a;
+const higherPlan = (a: UserPlan, b: UserPlan): UserPlan => (PLAN_RANK[b] > PLAN_RANK[a] ? b : a);
 
 const IAP_SUBSCRIPTION_TABLES = ['google_iap_subscriptions', 'apple_iap_subscriptions'] as const;
 
@@ -34,7 +33,7 @@ const ENTITLED_STORED_IAP_STATUSES = ['active'];
  * row before it touches `plans`, so the rows are already current by the time we
  * get here.
  */
-export const getHighestActiveIapPlan = async (userId: string): Promise<UserPlan> => {
+const getHighestActiveIapPlan = async (userId: string): Promise<UserPlan> => {
   const supabase = createSupabaseAdminClient();
   const results = await Promise.all(
     IAP_SUBSCRIPTION_TABLES.map((table) =>
@@ -60,7 +59,7 @@ export const getHighestActiveIapPlan = async (userId: string): Promise<UserPlan>
 };
 
 /** Highest plan still entitled by an active (or trialing) Stripe subscription. */
-export const getHighestActiveStripePlan = async (
+const getHighestActiveStripePlan = async (
   userId: string,
   stripeCustomerId?: string,
 ): Promise<UserPlan> => {

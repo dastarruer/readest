@@ -81,7 +81,7 @@ export interface BookIndexMeta {
   lastUpdated: number;
 }
 
-export interface IndexingState {
+interface IndexingState {
   bookHash: string;
   status: 'idle' | 'indexing' | 'complete' | 'error';
   progress: number;

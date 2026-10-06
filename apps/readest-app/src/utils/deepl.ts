@@ -9,7 +9,7 @@ export type RequestParams = {
   targetLang: string;
 };
 
-export type RawResponseParams = {
+type RawResponseParams = {
   jsonrpc: string;
   id: number;
   result: {

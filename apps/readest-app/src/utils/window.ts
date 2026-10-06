@@ -191,12 +191,12 @@ export const tauriHandleSetAlwaysOnTop = async (isAlwaysOnTop: boolean) => {
   await Promise.all(windows.map((w) => w.setAlwaysOnTop(isAlwaysOnTop)));
 };
 
-export const tauriGetAlwaysOnTop = async () => {
+const tauriGetAlwaysOnTop = async () => {
   const currentWindow = getCurrentWindow();
   return await currentWindow.isAlwaysOnTop();
 };
 
-export const tauriHandleOnWindowFocus = async (callback: () => void) => {
+const tauriHandleOnWindowFocus = async (callback: () => void) => {
   const currentWindow = getCurrentWindow();
   return currentWindow.listen(TauriEvent.WINDOW_FOCUS, async () => {
     await callback();

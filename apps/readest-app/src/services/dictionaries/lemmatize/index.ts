@@ -14,7 +14,7 @@ import { normalizedLangCode } from '@/utils/lang';
 import { lemmatizeEnglish } from './english';
 
 /** Maps a single inflected word to ordered, de-duplicated base-form candidates. */
-export type Lemmatizer = (word: string) => string[];
+type Lemmatizer = (word: string) => string[];
 
 const REGISTRY: Record<string, Lemmatizer> = {
   en: lemmatizeEnglish,

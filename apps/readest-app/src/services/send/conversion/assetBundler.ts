@@ -27,7 +27,7 @@ const httpFetch = (url: string, referer: string | null, init?: RequestInit): Pro
 };
 
 /** Per-asset limits picked to keep clipped articles light. */
-export const MAX_ASSET_BYTES = 5 * 1024 * 1024;
+const MAX_ASSET_BYTES = 5 * 1024 * 1024;
 export const MAX_TOTAL_ASSET_BYTES = 30 * 1024 * 1024;
 const FETCH_TIMEOUT_MS = 8_000;
 const MAX_CONCURRENCY = 4;

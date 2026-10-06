@@ -37,11 +37,11 @@ const showUpdateWindow = (latestVersion: string, scrollBarStyle: ScrollBarStyle)
 
 type FetchFn = typeof fetch;
 
-export interface UpdateManifestEntry {
+interface UpdateManifestEntry {
   url?: string;
   signature?: string;
 }
-export interface UpdateManifest {
+interface UpdateManifest {
   version: string;
   pub_date?: string;
   notes?: string;

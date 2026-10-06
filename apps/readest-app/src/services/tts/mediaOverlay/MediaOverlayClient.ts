@@ -36,7 +36,7 @@ import {
 import type { NarrationClock } from './NarrationClock';
 import { NativeNarrationPlayer } from './NativeNarrationPlayer';
 
-export const MEDIA_OVERLAY_CLIENT_NAME = 'media-overlay';
+const MEDIA_OVERLAY_CLIENT_NAME = 'media-overlay';
 export const MEDIA_OVERLAY_VOICE_ID = 'media-overlay';
 
 // Polling backstop for the media clock. 'timeupdate' alone fires only ~4x/sec,

@@ -11,7 +11,7 @@ import {
 
 /** Magic marker so an import can tell our own file from any other JSON. */
 export const READEST_ANNOTATION_FORMAT = 'readest-annotations';
-export const READEST_ANNOTATION_VERSION = 1;
+const READEST_ANNOTATION_VERSION = 1;
 
 const BOOK_NOTE_TYPES: BookNoteType[] = ['annotation', 'bookmark', 'excerpt'];
 
@@ -20,7 +20,7 @@ const BOOK_NOTE_TYPES: BookNoteType[] = ['annotation', 'bookmark', 'excerpt'];
  * round-trips without a mapping layer. Per-install fields (`bookHash`,
  * `metaHash`, `deletedAt`) and derived ones (`page`) are deliberately absent.
  */
-export interface ReadestAnnotationEntry {
+interface ReadestAnnotationEntry {
   id: string;
   type: BookNoteType;
   cfi: string;
@@ -35,7 +35,7 @@ export interface ReadestAnnotationEntry {
   updatedAt: number;
 }
 
-export interface ReadestAnnotationBook {
+interface ReadestAnnotationBook {
   title: string;
   author: string;
   hash?: string;

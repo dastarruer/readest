@@ -21,7 +21,7 @@ export interface PluginWorkerLike {
   terminate(): void;
 }
 
-export class PluginRuntimeError extends Error {
+class PluginRuntimeError extends Error {
   constructor(
     message: string,
     readonly code: string,

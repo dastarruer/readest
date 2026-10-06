@@ -6,7 +6,7 @@ import { isPurchaseProduct, mapProductIdToInterval, mapProductIdToUserPlan } fro
 
 const SUBSCRIPTION_SUCCESS_PATH = '/user/subscription/success';
 
-export const getPurchaseVerifyParams = (purchase: IAPPurchase) => {
+const getPurchaseVerifyParams = (purchase: IAPPurchase) => {
   return new URLSearchParams({
     payment: 'iap',
     platform: purchase.platform,
@@ -113,20 +113,20 @@ export const verifyApplePurchaseProducts = async (purchases: IAPPurchase[]) => {
   }
 };
 
-export const initializeIAP = async () => {
+const initializeIAP = async () => {
   const iapService = new IAPService();
   await iapService.initialize();
   return iapService;
 };
 
-export const fetchIAPProducts = async (productIds: string[]) => {
+const fetchIAPProducts = async (productIds: string[]) => {
   const iapService = new IAPService();
   await iapService.initialize();
   const products = await iapService.fetchProducts(productIds);
   return products;
 };
 
-export const transformIAPProductToAvailablePlan = (product: IAPProduct): AvailablePlan => {
+const transformIAPProductToAvailablePlan = (product: IAPProduct): AvailablePlan => {
   return {
     plan: mapProductIdToUserPlan(product.id),
     productId: product.id,

@@ -18,7 +18,7 @@ import {
 const REQUEST_TIMEOUT_MS = 60_000;
 const MAX_CACHE_ENTRIES = 100;
 
-export const CONTEXT_DICTIONARY_PROMPT = `You are a contextual dictionary inside an ebook reader. The reader selected a word or phrase in a book written in {{sourceLang}} and wants to know what it means in this passage.
+const CONTEXT_DICTIONARY_PROMPT = `You are a contextual dictionary inside an ebook reader. The reader selected a word or phrase in a book written in {{sourceLang}} and wants to know what it means in this passage.
 
 Use the surrounding passage to pick the sense intended here, not just the most common one. Ground the entry only in the provided passage and do not invent facts about the book.
 Write grammar, definition, explanation, example explanations and synonym nuances in {{targetLang}}. Keep the headword, example sentences and synonyms in the language of the book. Write pronunciation as IPA.

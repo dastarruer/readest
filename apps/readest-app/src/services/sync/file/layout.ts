@@ -27,15 +27,15 @@ import { makeSafeFilename } from '@/utils/misc';
  * would orphan every existing remote tree, so they must stay byte-stable.
  */
 
-export const SYNC_BASE_DIR = 'Readest';
+const SYNC_BASE_DIR = 'Readest';
 export const SYNC_BOOKS_DIR = 'books';
-export const SYNC_LIBRARY_FILE = 'library.json';
+const SYNC_LIBRARY_FILE = 'library.json';
 export const SYNC_BOOK_CONFIG_FILE = 'config.json';
 export const SYNC_BOOK_COVER_FILE = 'cover.png';
 // TTS section packs (<section>-<keysfp>.mp3 + .json sidecars) live in a
 // per-book subdirectory. Additive to the frozen layout above: older clients
 // simply never look inside it.
-export const SYNC_BOOK_TTS_DIR = 'tts';
+const SYNC_BOOK_TTS_DIR = 'tts';
 
 /**
  * Normalise the user-entered rootPath so the rest of the code can rely on
@@ -88,7 +88,7 @@ export const buildLibraryPath = (rootPath: string): string =>
  * Re-uses readest's existing `makeSafeFilename` so naming rules are
  * consistent with the local on-disk layout (which is `<hash>/<title>.<ext>`).
  */
-export const buildBookFileName = (book: Book): string => {
+const buildBookFileName = (book: Book): string => {
   const ext = EXTS[book.format] || 'bin';
   const baseName = book.sourceTitle || book.title || book.hash;
   return `${makeSafeFilename(baseName)}.${ext}`;

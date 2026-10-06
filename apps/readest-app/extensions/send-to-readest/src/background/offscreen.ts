@@ -44,7 +44,7 @@ async function offscreenDocumentExists(): Promise<boolean> {
   return false;
 }
 
-export async function ensureOffscreenDocument(): Promise<void> {
+async function ensureOffscreenDocument(): Promise<void> {
   if (await offscreenDocumentExists()) {
     await waitForOffscreenReady();
     return;

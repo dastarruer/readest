@@ -1,4 +1,4 @@
-export type Preprocessor = (text: string) => string;
+type Preprocessor = (text: string) => string;
 export type TextSubstitutions = Record<string, string>;
 
 const defaultSubstitutions: TextSubstitutions = {
@@ -7,7 +7,7 @@ const defaultSubstitutions: TextSubstitutions = {
   Acknowledgements: 'The Acknowledgements',
 };
 
-export const basicSubstitute = (text: string, substitutions: TextSubstitutions): string => {
+const basicSubstitute = (text: string, substitutions: TextSubstitutions): string => {
   const allSubstitutions = { ...defaultSubstitutions, ...substitutions };
 
   if (Object.keys(allSubstitutions).length === 0) {
@@ -21,7 +21,7 @@ export const basicSubstitute = (text: string, substitutions: TextSubstitutions):
   return text;
 };
 
-export function createPreprocessor(substitutions: TextSubstitutions = {}): Preprocessor {
+function createPreprocessor(substitutions: TextSubstitutions = {}): Preprocessor {
   return (text: string) => basicSubstitute(text, substitutions);
 }
 

@@ -14,8 +14,6 @@ import {
   RECENT_BOOKSHELF_ID,
 } from './definitions';
 import { stubTranslation as _ } from '@/utils/misc';
-
-export { mergeBookshelfRows } from './replica';
 export const mergeBookshelfStates = (a?: BookshelfState, b?: BookshelfState): BookshelfState => {
   const rows: Record<string, BookshelfReplicaRow> = {};
   for (const [id, cached] of [...Object.entries(a?.rows || {}), ...Object.entries(b?.rows || {})]) {

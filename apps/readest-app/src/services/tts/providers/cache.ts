@@ -54,7 +54,7 @@ export interface TTSCacheStore {
   close?(): Promise<void>;
 }
 
-export const computeTTSCacheKey = (providerId: string, req: SpeechSynthesisRequest): string =>
+const computeTTSCacheKey = (providerId: string, req: SpeechSynthesisRequest): string =>
   md5(JSON.stringify(['tts-v1', providerId, req.lang, req.voice, req.pitch, req.text]));
 
 export class CachingProvider implements SpeechProvider {

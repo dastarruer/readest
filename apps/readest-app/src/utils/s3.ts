@@ -22,7 +22,7 @@ const s3ClientCredentials = {
 };
 
 // Internal client used for server-side SDK calls (PutObject, CopyObject, etc.)
-export const s3Client = new S3Client({
+const s3Client = new S3Client({
   forcePathStyle: true,
   region: S3_REGION,
   endpoint: S3_ENDPOINT,

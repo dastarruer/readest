@@ -48,7 +48,7 @@ import type { BookFormat } from '@/types/book';
  */
 const MOBI_EXT_RE = /\.(mobi|azw|azw3|prc)$/i;
 
-export const isEligibleMobiPath = (filePath: string | undefined): filePath is string =>
+const isEligibleMobiPath = (filePath: string | undefined): filePath is string =>
   !!filePath && isTauriAppPlatform() && MOBI_EXT_RE.test(filePath);
 
 /**

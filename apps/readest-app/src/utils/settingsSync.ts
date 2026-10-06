@@ -22,7 +22,7 @@ import type { SystemSettings } from '@/types/settings';
  * device/window-local field (filesystem paths, `lastOpenBooks`, sync cursors,
  * screen brightness, ...) is left untouched on the receiving window.
  */
-export const SETTINGS_SYNC_EVENT = 'global-settings-window-sync';
+const SETTINGS_SYNC_EVENT = 'global-settings-window-sync';
 
 /**
  * Minimal cloud-sync provider selection payload. ONLY the enabled flags
@@ -32,7 +32,7 @@ export const SETTINGS_SYNC_EVENT = 'global-settings-window-sync';
  * reader window's routine cursor save interleaving with a provider
  * switch could win and silently flip the selection back).
  */
-export interface CloudSyncProviderFlags {
+interface CloudSyncProviderFlags {
   webdav: { enabled: boolean; providerSelectedAt?: number };
   googleDrive: { enabled: boolean; providerSelectedAt?: number };
   /** Optional: absent on payloads from pre-S3 windows (treated as unchanged). */

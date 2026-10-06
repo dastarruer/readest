@@ -5,7 +5,7 @@ import type { SyncErrorCode } from '@/libs/errors';
 
 export const MAX_JSON_BYTES = 64 * 1024;
 export const MAX_FIELD_COUNT = 64;
-export const MAX_FILENAME_LEN = 255;
+const MAX_FILENAME_LEN = 255;
 
 const fieldEnvelopeSchema = z.object({
   v: z.unknown(),

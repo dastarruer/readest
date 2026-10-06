@@ -11,7 +11,7 @@ import BookItem from './BookItem';
  * How many recently-read books the top shelf holds. Fixed (no user option) so
  * the row stays a compact quick-resume strip rather than a second library.
  */
-export const RECENT_SHELF_BOOK_COUNT = 12;
+const RECENT_SHELF_BOOK_COUNT = 12;
 
 interface RecentShelfProps {
   books: Book[];

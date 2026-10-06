@@ -25,7 +25,7 @@ import type { NovelChapterLink, NovelToc, WorkMetadata } from './chapterList';
 
 /** Hard cap — a runaway TOC heuristic must not schedule tens of thousands of
  *  requests. Real novels top out around this size. */
-export const MAX_NOVEL_CHAPTERS = 2000;
+const MAX_NOVEL_CHAPTERS = 2000;
 
 const PAGE_FETCH_TIMEOUT_MS = 15_000;
 const CHAPTER_CONCURRENCY = 4;
@@ -38,8 +38,8 @@ export interface FetchedPage {
   finalUrl: string;
 }
 
-export type FetchPage = (url: string, signal?: AbortSignal) => Promise<FetchedPage>;
-export type FetchCover = (
+type FetchPage = (url: string, signal?: AbortSignal) => Promise<FetchedPage>;
+type FetchCover = (
   url: string,
   referer: string,
 ) => Promise<{ bytes: ArrayBuffer; mime: string } | null>;

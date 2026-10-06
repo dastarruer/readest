@@ -52,7 +52,7 @@ export const isEmailInPlan = (plan: UserPlan, customizationPurchased: boolean): 
  * in Settings and the reader's auto-sync stays off, so syncing to a personal
  * cloud is a premium feature.
  */
-export const CLOUD_SYNC_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
+const CLOUD_SYNC_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
 
 export const isCloudSyncInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);
@@ -82,7 +82,7 @@ export const isCloudSyncAllowed = (plan: UserPlan, customizationPurchased: boole
  * (Plus, Pro, and Lifetime `purchase`). Free users see the download row with a
  * Premium badge and an upgrade route instead of the per-chapter controls.
  */
-export const TTS_CACHE_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
+const TTS_CACHE_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
 
 export const isTTSCacheInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);
@@ -126,7 +126,7 @@ export const isAbsOfflineAllowed = (plan: UserPlan, customizationPurchased: bool
  * free. This gate is client-side only (LAN transfers have no server in the
  * path), matching the TTS-cache gate's trust level.
  */
-export const NEARBY_PAIRING_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
+const NEARBY_PAIRING_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
 
 export const isNearbyPairingInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);
@@ -161,7 +161,7 @@ export const getCustomizationPurchased = (token: string): boolean => {
  * presents, so including it would hand every premium feature to a buyer who
  * only wanted more space.
  */
-export const PREMIUM_PLANS: readonly UserPlan[] = ['plus', 'pro'];
+const PREMIUM_PLANS: readonly UserPlan[] = ['plus', 'pro'];
 
 /**
  * Self-hosted deployments unlock every premium feature, signed in or not.

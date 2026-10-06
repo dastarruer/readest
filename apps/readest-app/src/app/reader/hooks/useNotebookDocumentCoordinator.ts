@@ -20,7 +20,7 @@ export const flushNotebookDocument = async (bookKey: string): Promise<NotebookFl
   return coordinator ? coordinator.flush() : 'clean';
 };
 
-export const flushAllNotebookDocuments = async (): Promise<NotebookFlushResult[]> =>
+const flushAllNotebookDocuments = async (): Promise<NotebookFlushResult[]> =>
   Promise.all([...coordinators.values()].map((coordinator) => coordinator.flush()));
 
 export const discardNotebookDocument = (bookKey: string): void => {

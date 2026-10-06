@@ -8,7 +8,7 @@
  * bare `/approot/children` collection. No fetch, no auth, no state.
  */
 
-export const GRAPH_BASE = 'https://graph.microsoft.com/v1.0';
+const GRAPH_BASE = 'https://graph.microsoft.com/v1.0';
 const APPROOT = `${GRAPH_BASE}/me/drive/special/approot`;
 /** Metadata + list selectors: enough to build a FileEntry + change-detect via cTag. */
 const CHILD_SELECT = 'name,size,cTag,file,folder';

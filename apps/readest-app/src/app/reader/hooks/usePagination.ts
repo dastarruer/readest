@@ -20,7 +20,7 @@ import { tauriGetWindowLogicalPosition } from '@/utils/window';
 import { getReadingRulerMoveDirection } from '../utils/readingRuler';
 import { useTouchInterceptor } from './useTouchInterceptor';
 
-export type ScrollSource = 'touch' | 'mouse';
+type ScrollSource = 'touch' | 'mouse';
 
 type PaginationSide = 'left' | 'right' | 'up' | 'down';
 type PaginationMode = 'pan' | 'page' | 'section';

@@ -240,5 +240,3 @@ function embeddingModelIdFor(settings: AISettings): string {
       return settings.openrouterEmbeddingModel || 'openai/text-embedding-3-small';
   }
 }
-
-export { DEFAULT_TOP_K };

@@ -17,7 +17,7 @@ export interface Point {
   y: number;
 }
 
-export type PositionDir = 'up' | 'down' | 'left' | 'right';
+type PositionDir = 'up' | 'down' | 'left' | 'right';
 
 export interface Position {
   point: Point;
@@ -26,7 +26,7 @@ export interface Position {
 
 // One section's part of a selection that runs across section documents (a PDF
 // selection continued onto the next page, #5809).
-export interface SelectionSegment {
+interface SelectionSegment {
   range: Range;
   index: number;
   text: string;

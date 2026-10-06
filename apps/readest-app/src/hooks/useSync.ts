@@ -56,7 +56,7 @@ export const countSyncedRecords = (
   return records.filter((rec) => !rec.deleted_at && (type !== 'books' || !!rec.uploaded_at)).length;
 };
 
-export const BOOKS_PULL_PAGE_SIZE = 1000;
+const BOOKS_PULL_PAGE_SIZE = 1000;
 
 /**
  * Pull the books delta in bounded pages: a delta grown to a whole 10k-book

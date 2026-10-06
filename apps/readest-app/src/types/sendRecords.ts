@@ -9,7 +9,7 @@ export interface DBSendAddress {
   rotated_at: string | null;
 }
 
-export type SendSenderStatus = 'approved' | 'pending';
+type SendSenderStatus = 'approved' | 'pending';
 
 export interface DBSendAllowedSender {
   id: string;
@@ -19,9 +19,9 @@ export interface DBSendAllowedSender {
   created_at: string;
 }
 
-export type SendInboxKind = 'file' | 'url' | 'html';
-export type SendInboxSource = 'email' | 'extension';
-export type SendInboxStatus = 'pending' | 'claimed' | 'done' | 'failed';
+type SendInboxKind = 'file' | 'url' | 'html';
+type SendInboxSource = 'email' | 'extension';
+type SendInboxStatus = 'pending' | 'claimed' | 'done' | 'failed';
 
 export interface DBSendInboxItem {
   id: string;

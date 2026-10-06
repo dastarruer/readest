@@ -291,5 +291,3 @@ export const CacheManagerWindow = () => {
     </Dialog>
   );
 };
-
-export default CacheManagerWindow;

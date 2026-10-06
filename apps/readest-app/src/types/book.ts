@@ -533,7 +533,7 @@ export interface ProofreadRule {
   deletedAt?: number | null;
 }
 
-export interface ProofreadRulesConfig {
+interface ProofreadRulesConfig {
   proofreadRules?: ProofreadRule[];
 }
 

@@ -33,7 +33,7 @@ export function isClipCancelled(err: unknown): boolean {
   return message === CLIP_CANCELLED_MESSAGE;
 }
 
-export async function clipPageToBook(
+async function clipPageToBook(
   url: string,
   _: Translate,
   interactive = false,

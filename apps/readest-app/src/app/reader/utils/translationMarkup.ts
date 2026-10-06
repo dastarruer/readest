@@ -127,7 +127,7 @@ export const sanitizeTranslatedMarkup = (
 };
 
 /** Tags the sanitizer will keep — exported for tests and documentation. */
-export const SANITIZER_ALLOWED_TAGS = INLINE_FORMATTING_TAGS;
+const SANITIZER_ALLOWED_TAGS = INLINE_FORMATTING_TAGS;
 
 interface Ancestor {
   tag: string;

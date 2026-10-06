@@ -61,7 +61,7 @@ export class UnsupportedManifestError extends Error {
   }
 }
 
-export class BookOrbitAuthError extends Error {
+class BookOrbitAuthError extends Error {
   constructor() {
     super('BookOrbit authentication failed');
     this.name = 'BookOrbitAuthError';

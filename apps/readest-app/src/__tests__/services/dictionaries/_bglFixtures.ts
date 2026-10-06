@@ -10,7 +10,7 @@ import path from 'node:path';
 
 const FIXTURES_DIR = path.resolve(__dirname, '../../fixtures/data/dicts');
 
-export const BGL_FIXTURE_PATH = path.join(FIXTURES_DIR, 'hist-geog-en-fr.bgl');
+const BGL_FIXTURE_PATH = path.join(FIXTURES_DIR, 'hist-geog-en-fr.bgl');
 export const BGL_FIXTURE_NAME = 'hist-geog-en-fr.bgl';
 
 async function readAsFile(filePath: string, name: string): Promise<File> {

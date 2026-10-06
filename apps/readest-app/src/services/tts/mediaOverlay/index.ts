@@ -1,15 +1,11 @@
 import type { BookDoc } from '@/libs/document';
-
-export { parseSmil, parseSmilClock, type SmilPar } from './parseSmil';
 export {
   loadMediaOverlaySection,
   MediaOverlaySection,
-  type NarrationPar,
 } from './MediaOverlaySection';
 export { MediaOverlayTTS } from './MediaOverlayTTS';
 export {
   MediaOverlayClient,
-  MEDIA_OVERLAY_CLIENT_NAME,
   MEDIA_OVERLAY_VOICE_ID,
 } from './MediaOverlayClient';
 

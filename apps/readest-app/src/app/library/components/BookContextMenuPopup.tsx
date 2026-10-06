@@ -30,7 +30,7 @@ interface Bounds {
  * other side of the pointer when it would run off the right/bottom edge and
  * clamping to `bounds` as a last resort (matches native context menus).
  */
-export const getContextMenuPosition = (point: Point, menu: Size, bounds: Bounds) => {
+const getContextMenuPosition = (point: Point, menu: Size, bounds: Bounds) => {
   const fitsRight = point.x + menu.width <= bounds.right;
   const left = Math.max(bounds.left, fitsRight ? point.x : point.x - menu.width);
   const fitsBelow = point.y + menu.height <= bounds.bottom;

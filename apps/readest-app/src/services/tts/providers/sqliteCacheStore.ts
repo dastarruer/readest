@@ -47,7 +47,7 @@ export interface TTSPackFs {
 // adopt the pack into its own database (sync) or to label an export. Written
 // beside the pack as <name>.json AFTER the mp3 exists, so a sidecar's
 // presence always implies a complete pack.
-export interface TTSPackSidecarEntry {
+interface TTSPackSidecarEntry {
   key: string;
   offset: number;
   length: number;

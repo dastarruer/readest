@@ -33,7 +33,7 @@ export interface SelectedFile {
   name?: string;
 }
 
-export interface FileSelectionResult {
+interface FileSelectionResult {
   files: SelectedFile[];
   error?: string;
 }
@@ -264,4 +264,4 @@ export const FILE_SELECTION_PRESETS = {
   },
 };
 
-export type SelectionType = keyof typeof FILE_SELECTION_PRESETS;
+type SelectionType = keyof typeof FILE_SELECTION_PRESETS;

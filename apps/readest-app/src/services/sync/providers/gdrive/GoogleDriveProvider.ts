@@ -71,7 +71,7 @@ export interface DriveAuth {
 export type FetchFn = (input: string, init?: RequestInit) => Promise<Response>;
 
 /** Injected sleep so the retry backoff is instant under test. */
-export type SleepFn = (ms: number) => Promise<void>;
+type SleepFn = (ms: number) => Promise<void>;
 
 export interface GoogleDriveProviderOptions {
   sleep?: SleepFn;

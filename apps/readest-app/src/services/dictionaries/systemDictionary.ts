@@ -77,7 +77,7 @@ export interface SystemDictionaryAnchor {
   style?: SystemDictionaryAnchorStyle;
 }
 
-export interface SystemDictionaryAnchorStyle {
+interface SystemDictionaryAnchorStyle {
   /** Font size in CSS pixels of the outer webview viewport. */
   fontSize?: number;
   /** Comma-separated CSS font-family stack. */

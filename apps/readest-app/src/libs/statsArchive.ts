@@ -50,7 +50,7 @@ export interface StatArchiveManifestRow {
 
 // Minimal local typings for the Cloudflare bindings (the project does not
 // depend on @cloudflare/workers-types; same approach as iap/telemetry.ts).
-export interface R2ObjectBodyLike {
+interface R2ObjectBodyLike {
   size: number;
   text(): Promise<string>;
 }
@@ -68,7 +68,7 @@ export interface R2BucketLike {
   }): Promise<{ objects: { key: string }[]; truncated: boolean; cursor?: string }>;
   delete(keys: string | string[]): Promise<void>;
 }
-export interface AnalyticsEngineDatasetLike {
+interface AnalyticsEngineDatasetLike {
   writeDataPoint(event: {
     indexes?: string[];
     blobs?: (string | null)[];
@@ -111,7 +111,7 @@ export const tsToMs = (ts: string): number =>
 export const segmentKey = (userId: string, updatedToMs: number) =>
   `${SEGMENT_KEY_PREFIX}${userId}/${updatedToMs}.json`;
 
-export const userSegmentPrefix = (userId: string) => `${SEGMENT_KEY_PREFIX}${userId}/`;
+const userSegmentPrefix = (userId: string) => `${SEGMENT_KEY_PREFIX}${userId}/`;
 
 const compareRows = (a: ArchivedPageRow, b: ArchivedPageRow) =>
   a.updated_at_ms - b.updated_at_ms ||

@@ -281,7 +281,7 @@ const getPathResolver = ({
   };
 };
 
-export const nativeFileSystem: FileSystem = {
+const nativeFileSystem: FileSystem = {
   resolvePath: getPathResolver(),
 
   async getPrefix(base: BaseDir) {

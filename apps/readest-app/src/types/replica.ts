@@ -15,7 +15,7 @@ export interface FieldEnvelope<V = unknown> {
 
 export type FieldsObject = Record<string, FieldEnvelope>;
 
-export interface ManifestFile {
+interface ManifestFile {
   filename: string;
   byteSize: number;
   partialMd5: string;

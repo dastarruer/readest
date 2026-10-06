@@ -5,7 +5,7 @@ export interface ConversionWorkerRequest {
   payload: ConvertInput;
 }
 
-export interface ConversionWorkerSuccess {
+interface ConversionWorkerSuccess {
   type: 'success';
   payload: {
     epubBuffer: ArrayBuffer;
@@ -15,7 +15,7 @@ export interface ConversionWorkerSuccess {
   };
 }
 
-export interface ConversionWorkerError {
+interface ConversionWorkerError {
   type: 'error';
   payload: {
     message: string;

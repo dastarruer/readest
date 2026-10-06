@@ -176,7 +176,7 @@ const resolveScopedTheme = (
  * The reader owns `/reader`; everything else (library, settings, OPDS, player,
  * auth) shares the library scope so no route paints a third look.
  */
-export const getThemeScopeForPath = (pathname?: string): ThemeScope => {
+const getThemeScopeForPath = (pathname?: string): ThemeScope => {
   const path = pathname ?? (typeof window !== 'undefined' ? window.location.pathname : '');
   return path.startsWith('/reader') ? 'reader' : 'library';
 };

@@ -7,7 +7,7 @@ export interface TxtConverterWorkerRequest {
   };
 }
 
-export interface TxtConverterWorkerSuccess {
+interface TxtConverterWorkerSuccess {
   type: 'success';
   payload: {
     epubBuffer: ArrayBuffer;
@@ -18,7 +18,7 @@ export interface TxtConverterWorkerSuccess {
   };
 }
 
-export interface TxtConverterWorkerError {
+interface TxtConverterWorkerError {
   type: 'error';
   payload: {
     message: string;

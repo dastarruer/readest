@@ -122,7 +122,7 @@ export interface OPDSBaseLink {
   templated?: boolean;
 }
 
-export interface OPDSPerson {
+interface OPDSPerson {
   name?: string;
   links: Array<{ href: string; type?: string }>;
 }
@@ -172,7 +172,7 @@ export interface OPDSStreamLink extends OPDSBaseLink {
   };
 }
 
-export interface OPDSFacetLink extends OPDSBaseLink {
+interface OPDSFacetLink extends OPDSBaseLink {
   properties?: {
     price?: undefined;
     indirectAcquisition?: undefined;
@@ -188,7 +188,7 @@ export interface OPDSNavigationItem extends OPDSGenericLink {
   [SYMBOL.SUMMARY]?: string;
 }
 
-export interface OPDSGroup {
+interface OPDSGroup {
   metadata: {
     title?: string;
     numberOfItems?: number;
@@ -198,7 +198,7 @@ export interface OPDSGroup {
   navigation?: OPDSNavigationItem[];
 }
 
-export interface OPDSFacet {
+interface OPDSFacet {
   metadata: {
     title?: string;
   };
@@ -212,12 +212,12 @@ interface OPDSSearchParam {
   value?: string;
 }
 
-export interface OPDSPrice {
+interface OPDSPrice {
   currency?: string;
   value: number;
 }
 
-export interface OPDSIndirectAcquisition {
+interface OPDSIndirectAcquisition {
   type: string;
   child?: OPDSIndirectAcquisition[];
 }

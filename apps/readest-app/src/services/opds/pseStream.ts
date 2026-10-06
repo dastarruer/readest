@@ -35,7 +35,7 @@ const PAGE_NUMBER_PATTERN = /%7BpageNumber%7D|\{pageNumber\}/gi;
 const MAX_WIDTH_PATTERN = /%7BmaxWidth%7D|\{maxWidth\}/gi;
 const DEFAULT_MAX_WIDTH = '2000';
 
-export const createPseStreamPageLoader = (data: PseStreamData) => {
+const createPseStreamPageLoader = (data: PseStreamData) => {
   const settings = useSettingsStore.getState().settings;
   const catalog = settings.opdsCatalogs?.find((c) => c.id === data.catalogId);
   const username = catalog?.username || '';

@@ -64,7 +64,7 @@ export interface StarDictEntry {
 const decoder = new TextDecoder('utf-8');
 
 /** Parse the key=value `.ifo` text into a record. */
-export function parseIfo(text: string): Record<string, string> {
+function parseIfo(text: string): Record<string, string> {
   const out: Record<string, string> = {};
   for (const raw of text.split(/\r?\n/)) {
     const line = raw.trim();
@@ -131,7 +131,7 @@ export function serializeOffsetsSidecar(offsets: Int32Array): Uint8Array {
 }
 
 /** Parse a sidecar blob. Returns `null` for missing / wrong-magic / wrong-version. */
-export function parseOffsetsSidecar(bytes: Uint8Array): Int32Array | null {
+function parseOffsetsSidecar(bytes: Uint8Array): Int32Array | null {
   if (bytes.length < SIDECAR_HEADER_SIZE) return null;
   for (let i = 0; i < SIDECAR_MAGIC.length; i++) {
     if (bytes[i] !== SIDECAR_MAGIC[i]) return null;

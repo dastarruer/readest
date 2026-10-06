@@ -4,7 +4,7 @@ import {
   validateNotebookMutation,
 } from '@/app/reader/utils/notebookDocument';
 
-export type NotebookDocumentStatus =
+type NotebookDocumentStatus =
   | 'clean'
   | 'dirty'
   | 'saving'
@@ -12,7 +12,7 @@ export type NotebookDocumentStatus =
   | 'waiting-for-position'
   | 'recovery-choice';
 
-export type NotebookDocumentError = 'size-limit' | 'recovery-unavailable' | 'save-failed' | null;
+type NotebookDocumentError = 'size-limit' | 'recovery-unavailable' | 'save-failed' | null;
 
 export interface NotebookDocumentSession {
   content: string;

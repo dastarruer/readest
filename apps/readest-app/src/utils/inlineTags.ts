@@ -30,7 +30,7 @@ export const INLINE_FORMATTING_TAGS = [
   'mark',
 ] as const;
 
-export type InlineFormattingTag = (typeof INLINE_FORMATTING_TAGS)[number];
+type InlineFormattingTag = (typeof INLINE_FORMATTING_TAGS)[number];
 
 /** Comma-separated form for use inside a CSS selector list. */
 export const INLINE_FORMATTING_SELECTOR = INLINE_FORMATTING_TAGS.join(', ');

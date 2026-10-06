@@ -3,7 +3,7 @@ import { IAPStatus } from './types';
 
 // Statuses that still grant the user their paid plan. Anything else (expired,
 // cancelled past its period, revoked, pending, on hold) falls back to `free`.
-export const ENTITLED_IAP_STATUSES: IAPStatus[] = ['active', 'in_grace_period'];
+const ENTITLED_IAP_STATUSES: IAPStatus[] = ['active', 'in_grace_period'];
 
 export const isEntitledStatus = (status: IAPStatus): boolean =>
   ENTITLED_IAP_STATUSES.includes(status);
@@ -21,7 +21,7 @@ export const mapProductIdToInterval = (productId: string): PlanInterval => {
   return 'lifetime';
 };
 
-export const mapProductIdToPlanType = (productId: string): PlanType => {
+const mapProductIdToPlanType = (productId: string): PlanType => {
   if (productId.includes('.purchase')) return 'purchase';
   return 'subscription';
 };

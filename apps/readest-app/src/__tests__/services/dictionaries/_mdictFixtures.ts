@@ -12,7 +12,7 @@ import path from 'node:path';
 const FIXTURES_DIR = path.resolve(__dirname, '../../fixtures/data/dicts');
 
 export const MDX_FIXTURE_PATH = path.join(FIXTURES_DIR, 'mdict-en-en.mdx');
-export const MDD_FIXTURE_PATH = path.join(FIXTURES_DIR, 'mdict-en-en.mdd');
+const MDD_FIXTURE_PATH = path.join(FIXTURES_DIR, 'mdict-en-en.mdd');
 
 export const MDX_FIXTURE_NAME = 'mdict-en-en.mdx';
 export const MDD_FIXTURE_NAME = 'mdict-en-en.mdd';
