@@ -151,9 +151,3 @@ export const useFileSyncStore = create<FileSyncState>((set, get) => ({
       ...(message ? { reportByKind: { ...s.reportByKind, [kind]: message } } : {}),
     })),
 }));
-
-/** Per-backend progress, idle when the backend has never started a run. */
-const selectProviderSyncProgress =
-  (kind: FileSyncBackendKind) =>
-  (state: FileSyncState): ProviderSyncProgress =>
-    state.byKind[kind] ?? IDLE;

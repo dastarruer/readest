@@ -1,6 +1,6 @@
 import { getAllWindows, getCurrentWindow } from '@tauri-apps/api/window';
 import { invoke } from '@tauri-apps/api/core';
-import { emitTo, TauriEvent } from '@tauri-apps/api/event';
+import { emitTo } from '@tauri-apps/api/event';
 import { exit } from '@tauri-apps/plugin-process';
 import { type as osType, version as osVersion } from '@tauri-apps/plugin-os';
 import { AppService } from '@/types/system';
@@ -189,18 +189,6 @@ export const tauriHandleToggleFullScreen = async () => {
 export const tauriHandleSetAlwaysOnTop = async (isAlwaysOnTop: boolean) => {
   const windows = await getAllWindows();
   await Promise.all(windows.map((w) => w.setAlwaysOnTop(isAlwaysOnTop)));
-};
-
-const tauriGetAlwaysOnTop = async () => {
-  const currentWindow = getCurrentWindow();
-  return await currentWindow.isAlwaysOnTop();
-};
-
-const tauriHandleOnWindowFocus = async (callback: () => void) => {
-  const currentWindow = getCurrentWindow();
-  return currentWindow.listen(TauriEvent.WINDOW_FOCUS, async () => {
-    await callback();
-  });
 };
 
 export const tauriQuitApp = async () => {

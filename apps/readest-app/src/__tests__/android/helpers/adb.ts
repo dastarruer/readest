@@ -39,13 +39,6 @@ export const isPackageInstalled = async (pkg: string): Promise<boolean> => {
   return out.includes(`package:${pkg}`);
 };
 
-const screenSize = async (): Promise<{ width: number; height: number }> => {
-  const out = await adbShell('wm size');
-  const m = out.match(/(\d+)x(\d+)/);
-  if (!m) throw new Error(`cannot parse screen size from: ${out}`);
-  return { width: Number(m[1]), height: Number(m[2]) };
-};
-
 export const tap = (x: number, y: number): Promise<string> =>
   adbShell(`input tap ${Math.round(x)} ${Math.round(y)}`);
 

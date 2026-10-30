@@ -127,5 +127,3 @@ export const hasScrollRoomY = (
   if (deltaY < 0) return el.scrollTop > 1;
   return false;
 };
-
-type WheelGestureDetector = ReturnType<typeof createWheelGestureDetector>;

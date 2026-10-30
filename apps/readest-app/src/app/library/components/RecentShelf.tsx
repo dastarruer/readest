@@ -7,12 +7,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLongPress } from '@/hooks/useLongPress';
 import BookItem from './BookItem';
 
-/**
- * How many recently-read books the top shelf holds. Fixed (no user option) so
- * the row stays a compact quick-resume strip rather than a second library.
- */
-const RECENT_SHELF_BOOK_COUNT = 12;
-
 interface RecentShelfProps {
   books: Book[];
   coverFit: LibraryCoverFitType;
@@ -262,7 +256,7 @@ const RecentShelf: React.FC<RecentShelfProps> = ({
             aria-label={_('Scroll left')}
             onClick={() => scrollByPage(-1)}
             style={{ top: coverCenter ?? '50%' }}
-            className='eink-bordered bg-base-100 border-base-content/10 hover:border-base-content/30 absolute start-2 -translate-y-1/2 rounded-full border p-1 shadow-xs transition-colors duration-200'
+            className='eink-bordered bg-base-100 border-base-content/10 hover:border-base-content/30 absolute inset-s-2 -translate-y-1/2 rounded-full border p-1 shadow-xs transition-colors duration-200'
           >
             <MdChevronLeft
               size={20}
@@ -276,7 +270,7 @@ const RecentShelf: React.FC<RecentShelfProps> = ({
             aria-label={_('Scroll right')}
             onClick={() => scrollByPage(1)}
             style={{ top: coverCenter ?? '50%' }}
-            className='eink-bordered bg-base-100 border-base-content/10 hover:border-base-content/30 absolute end-2 -translate-y-1/2 rounded-full border p-1 shadow-xs transition-colors duration-200'
+            className='eink-bordered bg-base-100 border-base-content/10 hover:border-base-content/30 absolute inset-e-2 -translate-y-1/2 rounded-full border p-1 shadow-xs transition-colors duration-200'
           >
             <MdChevronRight
               size={20}

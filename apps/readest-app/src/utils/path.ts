@@ -1,4 +1,3 @@
-import { join } from '@tauri-apps/api/path';
 import { isContentURI, isFileURI, isValidURL } from './misc';
 
 export const getFilename = (fileOrUri: string) => {
@@ -62,10 +61,6 @@ export const getDirPath = (filePath: string) => {
 export const getFolderImportGroupName = (filePath: string, basePath: string) => {
   const rootPath = getDirPath(basePath);
   return getDirPath(filePath).replace(rootPath, '').replace(/^\//, '');
-};
-
-const joinPaths = async (...paths: string[]) => {
-  return await join(...paths);
 };
 
 /**

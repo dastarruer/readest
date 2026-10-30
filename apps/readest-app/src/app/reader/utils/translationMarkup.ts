@@ -1,4 +1,4 @@
-import { INLINE_FORMATTING_TAGS, isInlineFormattingTag } from '@/utils/inlineTags';
+import { isInlineFormattingTag } from '@/utils/inlineTags';
 
 /**
  * Carrying a paragraph's inline formatting through translation (#1582).
@@ -125,9 +125,6 @@ export const sanitizeTranslatedMarkup = (
 
   return (fragment.textContent ?? '').trim() ? fragment : null;
 };
-
-/** Tags the sanitizer will keep — exported for tests and documentation. */
-const SANITIZER_ALLOWED_TAGS = INLINE_FORMATTING_TAGS;
 
 interface Ancestor {
   tag: string;

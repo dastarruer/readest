@@ -639,28 +639,6 @@ export const ensureDirectory = async (config: WebDAVConfig, ancestors: string[])
   }
 };
 
-/** Existence probe via HEAD; returns false on 404, true on 2xx, throws otherwise. */
-const exists = async (config: WebDAVConfig, path: string): Promise<boolean> => {
-  const response = await requestWithMethod(config, path, 'HEAD');
-  if (response.status === 404) return false;
-  if (response.status >= 200 && response.status < 300) return true;
-  if (response.status === 401 || response.status === 403) {
-    throw new WebDAVRequestError('Authentication failed', response.status, 'AUTH_FAILED');
-  }
-  throw new WebDAVRequestError(`HEAD failed with status ${response.status}`, response.status);
-};
-
-/** Best-effort delete; 404 is treated as success (already gone). */
-const deleteFile = async (config: WebDAVConfig, path: string): Promise<void> => {
-  const response = await requestWithMethod(config, path, 'DELETE');
-  if (response.status === 404) return;
-  if (response.status >= 200 && response.status < 300) return;
-  if (response.status === 401 || response.status === 403) {
-    throw new WebDAVRequestError('Authentication failed', response.status, 'AUTH_FAILED');
-  }
-  throw new WebDAVRequestError(`DELETE failed with status ${response.status}`, response.status);
-};
-
 /**
  * Recursively DELETE a collection (directory) and everything below it.
  *

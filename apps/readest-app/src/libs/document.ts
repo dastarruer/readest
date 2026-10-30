@@ -9,8 +9,6 @@ import * as epubcfi from 'foliate-js/epubcfi.js';
 
 export const CFI = epubcfi;
 
-type DocumentFile = File;
-
 type Location = {
   current: number;
   next: number;
@@ -702,17 +700,6 @@ export const getFileExtFromMimeType = (mimeType?: string): string => {
     }
   }
   return '';
-};
-
-const getMimeTypeFromFileExt = (ext: string): string => {
-  ext = ext.toLowerCase();
-  for (const format in EXTS) {
-    if (EXTS[format as BookFormat] === ext) {
-      const mimeTypes = MIMETYPES[format as BookFormat];
-      return mimeTypes[0] || 'application/octet-stream';
-    }
-  }
-  return 'application/octet-stream';
 };
 
 export const convertBlobUrlToDataUrl = async (blobUrl: string): Promise<string> => {

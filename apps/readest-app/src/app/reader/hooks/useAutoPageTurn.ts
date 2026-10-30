@@ -24,14 +24,6 @@ export type Point = { x: number; y: number };
 // The armed edge, for the on-screen mark; `turned` once the page has flipped.
 export type TurnHint = { corner: Corner; turned: boolean };
 
-// The subset of useTextSelector's return that drives the shared corner auto-turn,
-// passed to the range editors so their overlay handle drags turn the page too.
-interface AutoTurnControls {
-  noteAutoTurnPoint: (point: Point | null) => void;
-  cancelAutoTurn: () => void;
-  onAutoTurn: (cb: (corner: Corner) => void) => () => void;
-}
-
 // Which screen corner a point sits in: bottom-right turns forward, top-left
 // turns back. The zone is a quarter-ellipse of radius FRACTION around each
 // corner. Returns null when the point is in neither.

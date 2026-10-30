@@ -11,10 +11,10 @@ import type { ReedyMessagePart } from '../../store/reedyStore';
  */
 export function CitationPart({
   part,
-  onClick,
+  onClickAction: onClick,
 }: {
   part: Extract<ReedyMessagePart, { type: 'citation' }>;
-  onClick?: (cfi: string) => void;
+  onClickAction?: (cfi: string) => void;
 }) {
   const baseClass =
     'border-base-content/10 bg-base-200/60 my-1 flex items-start gap-1.5 rounded-md border px-2 py-1.5 text-[11px]';

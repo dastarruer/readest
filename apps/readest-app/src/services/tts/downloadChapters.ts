@@ -100,9 +100,3 @@ export const chapterDownloadStatus = (
   if (allDownloaded) return 'complete';
   return anyRecorded ? 'partial' : 'none';
 };
-
-const chapterSections = (chapter: DownloadChapter): number[] =>
-  Array.from(
-    { length: chapter.endSection - chapter.startSection },
-    (_, i) => chapter.startSection + i,
-  );

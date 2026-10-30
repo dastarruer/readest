@@ -19,7 +19,6 @@ import type { ReedySourceStore } from './reedySourceStore';
 
 const REEDY_DB_KEY = 'reedy';
 const REEDY_DB_FILE = 'reedy.db';
-const DEFAULT_TOP_K = 5;
 
 /**
  * Reedy retrieval backend. Lazy-opens reedy.db on first use, wraps the

@@ -21,14 +21,6 @@ const s3ClientCredentials = {
   secretAccessKey: S3_SECRET_ACCESS_KEY,
 };
 
-// Internal client used for server-side SDK calls (PutObject, CopyObject, etc.)
-const s3Client = new S3Client({
-  forcePathStyle: true,
-  region: S3_REGION,
-  endpoint: S3_ENDPOINT,
-  credentials: s3ClientCredentials,
-});
-
 // Signing client uses S3_PUBLIC_ENDPOINT so presigned URLs contain a hostname
 // that browsers can reach (S3_ENDPOINT may be an internal docker hostname like
 // "minio:9000" which is not resolvable outside the docker network).

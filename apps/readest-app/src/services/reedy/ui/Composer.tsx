@@ -26,20 +26,20 @@ type Skill = ComposerSkill;
  */
 export function Composer({
   isRunning,
-  onSend,
-  onAbort,
+  onSendAction: onSend,
+  onAbortAction: onAbort,
   disabled,
   skills,
   activeSkillId,
-  onSkillSelect,
+  onSkillSelectAction: onSkillSelect,
 }: {
   isRunning: boolean;
-  onSend: (text: string) => void;
-  onAbort: () => void;
+  onSendAction: (text: string) => void;
+  onAbortAction: () => void;
   disabled?: boolean;
   skills?: Skill[];
   activeSkillId?: string | null;
-  onSkillSelect?: (id: string | null) => void;
+  onSkillSelectAction?: (id: string | null) => void;
 }) {
   const [text, setText] = useState('');
 
@@ -91,7 +91,7 @@ export function Composer({
 
       <div className='border-base-content/10 bg-base-200/40 eink-bordered flex items-end gap-1 rounded-md border px-2 py-1.5'>
         <textarea
-          className='text-base-content placeholder:text-base-content/40 max-h-40 min-h-[1.75rem] flex-1 resize-none bg-transparent text-sm outline-hidden'
+          className='text-base-content placeholder:text-base-content/40 max-h-40 min-h-7 flex-1 resize-none bg-transparent text-sm outline-hidden'
           rows={1}
           placeholder='Ask Reedy about this book…'
           value={text}

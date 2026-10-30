@@ -369,7 +369,7 @@ export function ReedyAssistant({
         <AgentThread
           messages={messages}
           isRunning={isRunning}
-          onSourceClick={onNavigateToCfi}
+          onSourceClickAction={onNavigateToCfi}
           emptyState={
             <div className='text-base-content/60 px-6 text-center text-sm'>
               Ask anything about this book.
@@ -379,15 +379,15 @@ export function ReedyAssistant({
       </div>
       <Composer
         isRunning={isRunning}
-        onSend={handleSend}
-        onAbort={abort}
+        onSendAction={handleSend}
+        onAbortAction={abort}
         skills={availableSkills.map((s) => ({
           id: s.id,
           name: s.name,
           description: s.description,
         }))}
         activeSkillId={activeSkillId}
-        onSkillSelect={setActiveSkillId}
+        onSkillSelectAction={setActiveSkillId}
       />
     </div>
   );

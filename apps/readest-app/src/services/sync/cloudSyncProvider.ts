@@ -97,8 +97,6 @@ export const setCachedUserPlan = (plan: UserPlan | undefined): void => {
   cachedUserPlan = plan ?? 'free';
 };
 
-const getCachedUserPlan = (): UserPlan => cachedUserPlan;
-
 /**
  * Cached alongside the plan for the same reason: premium access is now the
  * plan OR an outright Full Customization purchase, and a storage-only buyer
@@ -110,8 +108,6 @@ let cachedCustomizationPurchased = false;
 export const setCachedCustomizationPurchased = (purchased: boolean | undefined): void => {
   cachedCustomizationPurchased = purchased ?? false;
 };
-
-const getCachedCustomizationPurchased = (): boolean => cachedCustomizationPurchased;
 
 export interface CloudSyncGate {
   /** Readest Cloud syncs the library channels (rows, progress, notes, files). */

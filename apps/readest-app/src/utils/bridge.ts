@@ -24,10 +24,6 @@ export interface SaveImageToGalleryResponse {
   error?: string;
 }
 
-interface UseBackgroundAudioRequest {
-  enabled: boolean;
-}
-
 export interface SetSelectionSuppressedRequest {
   target: 'gesture' | 'menu';
   suppressed: boolean;
@@ -145,12 +141,6 @@ export async function saveImageToGallery(
   request: SaveImageToGalleryRequest,
 ): Promise<SaveImageToGalleryResponse> {
   return await invoke<SaveImageToGalleryResponse>('plugin:native-bridge|save_image_to_gallery', {
-    payload: request,
-  });
-}
-
-async function invokeUseBackgroundAudio(request: UseBackgroundAudioRequest): Promise<void> {
-  await invoke('plugin:native-bridge|use_background_audio', {
     payload: request,
   });
 }

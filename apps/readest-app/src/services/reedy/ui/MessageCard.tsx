@@ -60,7 +60,7 @@ function PartDispatcher({
     case 'tool_call':
       return <ToolCallPart part={part} />;
     case 'citation':
-      return <CitationPart part={part} onClick={onSourceClick} />;
+      return <CitationPart part={part} onClickAction={onSourceClick} />;
     case 'error':
       return <ErrorPart part={part} />;
     case 'abort':

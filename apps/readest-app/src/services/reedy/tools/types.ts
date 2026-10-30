@@ -47,13 +47,3 @@ export interface ReedyTool<TArgs = unknown, TResult = unknown> {
   readonly inputSchema: z.ZodType<TArgs>;
   run(args: TArgs, ctx: ToolContext): Promise<TResult>;
 }
-
-/**
- * The shape the runtime needs back from registry.invoke() for each tool
- * call so it can emit the corresponding ReedyEvent.
- */
-interface ToolInvocation<TResult = unknown> {
-  ok: true;
-  result: TResult;
-  durationMs: number;
-}

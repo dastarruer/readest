@@ -52,5 +52,3 @@ export interface GooglePaymentData extends BasePaymentData {
   google_order_id: string;
   google_purchase_token: string;
 }
-
-type PaymentData = StripePaymentData | ApplePaymentData | GooglePaymentData;

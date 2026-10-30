@@ -627,8 +627,6 @@ export const pluginWorkerOutboundMessageSchema = z.union([
   progressMessageSchema,
 ]);
 
-type PluginResponse = z.infer<typeof pluginResponseSchema>;
 export type PluginProgress = z.infer<typeof progressMessageSchema>;
-type PluginHostResult = z.infer<typeof pluginHostResultSchema>;
 export type PluginWorkerInboundMessage = z.infer<typeof pluginWorkerInboundMessageSchema>;
 export type PluginWorkerOutboundMessage = z.infer<typeof pluginWorkerOutboundMessageSchema>;

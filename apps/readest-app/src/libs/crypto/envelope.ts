@@ -79,5 +79,3 @@ export const decryptFromEnvelope = async (
   }
   return dec.decode(plain);
 };
-
-const isSupportedAlg = (alg: string): boolean => SUPPORTED_ALGS.has(alg);

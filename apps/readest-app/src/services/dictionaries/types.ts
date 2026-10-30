@@ -259,8 +259,6 @@ export const BUILTIN_PROVIDER_IDS = {
   systemDictionary: 'builtin:system',
 } as const;
 
-type BuiltinProviderId = (typeof BUILTIN_PROVIDER_IDS)[keyof typeof BUILTIN_PROVIDER_IDS];
-
 /**
  * Stable ids for the built-in web-search templates. The `web:builtin:*`
  * prefix lets the registry recognize and dispatch them without a settings
@@ -273,5 +271,3 @@ export const BUILTIN_WEB_SEARCH_IDS = {
   merriamWebster: 'web:builtin:merriam-webster',
   goodreads: 'web:builtin:goodreads',
 } as const;
-
-type BuiltinWebSearchId = (typeof BUILTIN_WEB_SEARCH_IDS)[keyof typeof BUILTIN_WEB_SEARCH_IDS];

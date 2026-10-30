@@ -46,14 +46,6 @@ export const EMAIL_IN_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
 export const isEmailInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);
 
-/**
- * Plans that include third-party cloud sync (WebDAV / Google Drive): any paid
- * plan — Plus, Pro, and Lifetime (`purchase`). Free users see an upgrade prompt
- * in Settings and the reader's auto-sync stays off, so syncing to a personal
- * cloud is a premium feature.
- */
-const CLOUD_SYNC_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
-
 export const isCloudSyncInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);
 
@@ -75,14 +67,6 @@ export const CLOUD_SYNC_REQUIRES_PREMIUM = true;
  */
 export const isCloudSyncAllowed = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   !CLOUD_SYNC_REQUIRES_PREMIUM || isCloudSyncInPlan(plan, customizationPurchased);
-
-/**
- * Plans that include the offline TTS audio cache — pre-downloading a book's
- * Read Aloud audio per chapter so it plays without a network: any paid plan
- * (Plus, Pro, and Lifetime `purchase`). Free users see the download row with a
- * Premium badge and an upgrade route instead of the per-chapter controls.
- */
-const TTS_CACHE_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
 
 export const isTTSCacheInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);
@@ -117,16 +101,6 @@ export const ABS_OFFLINE_REQUIRES_PREMIUM = true;
 
 export const isAbsOfflineAllowed = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   !ABS_OFFLINE_REQUIRES_PREMIUM || isAbsOfflineInPlan(plan, customizationPurchased);
-
-/**
- * Plans that include Nearby BookDrop device pairing — trusted devices whose
- * drops skip the per-transfer confirmation dialog: any paid plan (Plus, Pro,
- * and Lifetime `purchase`). Free users see the pairing affordance with a
- * Premium badge and an upgrade route; plain confirm-every-time transfers stay
- * free. This gate is client-side only (LAN transfers have no server in the
- * path), matching the TTS-cache gate's trust level.
- */
-const NEARBY_PAIRING_PLANS: readonly UserPlan[] = ['plus', 'pro', 'purchase'];
 
 export const isNearbyPairingInPlan = (plan: UserPlan, customizationPurchased: boolean): boolean =>
   isCustomizationAllowed(plan, customizationPurchased);

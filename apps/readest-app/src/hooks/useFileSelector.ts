@@ -33,11 +33,6 @@ export interface SelectedFile {
   name?: string;
 }
 
-interface FileSelectionResult {
-  files: SelectedFile[];
-  error?: string;
-}
-
 /**
  * Whether `filename` is one of `extensions` (lowercase, no leading dot), with
  * `'*'` accepting anything. Tolerates the duplicate-download marker some

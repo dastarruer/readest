@@ -1,4 +1,4 @@
-interface UserQuota {
+export interface UserQuota {
   free: number;
   plus: number;
   pro: number;

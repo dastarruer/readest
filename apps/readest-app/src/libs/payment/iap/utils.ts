@@ -1,4 +1,4 @@
-import { PlanInterval, PlanType, UserPlan } from '@/types/quota';
+import { PlanInterval, UserPlan } from '@/types/quota';
 import { IAPStatus } from './types';
 
 // Statuses that still grant the user their paid plan. Anything else (expired,
@@ -19,11 +19,6 @@ export const mapProductIdToInterval = (productId: string): PlanInterval => {
   if (productId.includes('.monthly')) return 'month';
   if (productId.includes('.yearly')) return 'year';
   return 'lifetime';
-};
-
-const mapProductIdToPlanType = (productId: string): PlanType => {
-  if (productId.includes('.purchase')) return 'purchase';
-  return 'subscription';
 };
 
 export const mapProductIdToProductName = (productId: string): string => {

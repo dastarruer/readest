@@ -113,12 +113,6 @@ export const verifyApplePurchaseProducts = async (purchases: IAPPurchase[]) => {
   }
 };
 
-const initializeIAP = async () => {
-  const iapService = new IAPService();
-  await iapService.initialize();
-  return iapService;
-};
-
 const fetchIAPProducts = async (productIds: string[]) => {
   const iapService = new IAPService();
   await iapService.initialize();

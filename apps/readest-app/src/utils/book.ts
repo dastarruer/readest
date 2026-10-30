@@ -54,9 +54,6 @@ export const getConfigFilename = (book: Book) => {
 export const getBookNavFilename = (book: Book) => {
   return `${book.hash}/nav.json`;
 };
-const isBookFile = (filename: string) => {
-  return Object.values(EXTS).includes(filename.split('.').pop()!);
-};
 
 export const INIT_BOOK_CONFIG: BookConfig = {
   schemaVersion: BOOK_CONFIG_SCHEMA_VERSION,

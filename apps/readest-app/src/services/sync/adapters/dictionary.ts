@@ -8,15 +8,6 @@ import { parsePluginDictionaryMetadata } from '@/services/dictionaries/plugins/r
 export const DICTIONARY_KIND = 'dictionary';
 const DICTIONARY_SCHEMA_VERSION = 1;
 
-interface DictionarySyncedFields {
-  name: string;
-  kind: ImportedDictionary['kind'];
-  lang?: string;
-  addedAt: number;
-  unsupported?: boolean;
-  unsupportedReason?: string;
-}
-
 export const primaryDictionaryFile = (d: ImportedDictionary): string | null => {
   switch (d.kind) {
     case 'mdict':

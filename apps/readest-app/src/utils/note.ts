@@ -302,10 +302,3 @@ export function validateNoteTemplate(template: string): { isValid: boolean; erro
     };
   }
 }
-
-/**
- * Get the nunjucks environment instance for advanced use cases
- */
-function getNunjucksEnv(): nunjucks.Environment {
-  return env;
-}

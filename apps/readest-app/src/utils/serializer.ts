@@ -91,11 +91,3 @@ export const deserializeConfig = (
   config.updatedAt ??= Date.now();
   return config;
 };
-
-const compressConfig = (
-  config: BookConfig,
-  globalViewSettings: ViewSettings,
-  defaultSearchConfig: BookSearchConfig,
-): string => {
-  return JSON.parse(serializeConfig(config, globalViewSettings, defaultSearchConfig));
-};

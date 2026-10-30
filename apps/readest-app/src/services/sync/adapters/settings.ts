@@ -157,8 +157,6 @@ export const SETTINGS_ENCRYPTED_FIELDS = [
   's3.secretAccessKey',
 ] as const;
 
-type SettingsWhitelistKey = (typeof SETTINGS_WHITELIST)[number];
-
 /**
  * `encryptPackedFields` / `decryptRowFields` only handle string-valued
  * fields (`String(value)` on encrypt, a decrypted string back on

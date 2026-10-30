@@ -16,12 +16,12 @@ import { MessageCard } from './MessageCard';
 export function AgentThread({
   messages,
   isRunning,
-  onSourceClick,
+  onSourceClickAction: onSourceClick,
   emptyState,
 }: {
   messages: ReedyMessage[];
   isRunning: boolean;
-  onSourceClick?: (cfi: string) => void;
+  onSourceClickAction?: (cfi: string) => void;
   emptyState?: React.ReactNode;
 }) {
   const ref = useRef<VListHandle>(null);

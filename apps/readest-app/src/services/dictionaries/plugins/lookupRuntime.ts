@@ -15,7 +15,7 @@ export interface PluginLookupRuntimeLease
   release(): void;
 }
 
-let pools = new WeakMap<object, Map<string, LookupRuntimeEntry>>();
+const pools = new WeakMap<object, Map<string, LookupRuntimeEntry>>();
 
 export const acquirePluginLookupRuntime = (
   host: object,
@@ -57,8 +57,4 @@ export const acquirePluginLookupRuntime = (
       hostPool!.delete(pluginId);
     },
   };
-};
-
-const __resetPluginLookupRuntimesForTests = (): void => {
-  pools = new WeakMap();
 };

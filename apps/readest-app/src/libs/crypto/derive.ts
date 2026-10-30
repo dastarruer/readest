@@ -37,5 +37,3 @@ export const exportRawKey = async (key: CryptoKey): Promise<Uint8Array> => {
   const raw = await subtle.exportKey('raw', key);
   return new Uint8Array(raw);
 };
-
-const PBKDF2_ITERATIONS = PBKDF2_DEFAULT_ITERATIONS;

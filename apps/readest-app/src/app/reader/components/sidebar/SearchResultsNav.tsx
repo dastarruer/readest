@@ -75,20 +75,3 @@ export function flattenSearchResults(
 
   return flattened;
 }
-
-// Helper function to find the index of current result based on CFI
-function findCurrentResultIndex(
-  flattenedResults: { cfi: string; sectionLabel: string }[],
-  currentLocation: string | undefined,
-): number {
-  if (!currentLocation || flattenedResults.length === 0) return 0;
-
-  // Try to find exact match or closest match
-  for (let i = 0; i < flattenedResults.length; i++) {
-    if (flattenedResults[i]!.cfi === currentLocation) {
-      return i;
-    }
-  }
-
-  return 0;
-}

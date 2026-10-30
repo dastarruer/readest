@@ -57,26 +57,6 @@ export const encryptPackedFields = async (
 };
 
 /**
- * Detect whether the row carries at least one cipher envelope in any of
- * the named fields. The orchestrator uses this to decide whether to
- * trigger a passphrase prompt before the decrypt loop runs — the
- * common case (no encrypted credentials on the row) skips the prompt
- * entirely.
- */
-const rowHasCipherFields = (
-  fields: FieldsObject,
-  encryptedFields: readonly string[] | undefined,
-): boolean => {
-  if (!encryptedFields || encryptedFields.length === 0) return false;
-  for (const fieldName of encryptedFields) {
-    const envelope = fields[fieldName];
-    if (!envelope || typeof envelope !== 'object' || !('v' in envelope)) continue;
-    if (isCipherEnvelope((envelope as { v: unknown }).v)) return true;
-  }
-  return false;
-};
-
-/**
  * Snapshot the cipher ciphertexts (the `c` slot of each cipher envelope)
  * for the named fields, BEFORE decryptRowFields mutates them in place.
  * Used by the orchestrator to detect when a cipher has changed since

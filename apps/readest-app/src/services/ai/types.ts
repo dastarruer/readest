@@ -81,15 +81,6 @@ export interface BookIndexMeta {
   lastUpdated: number;
 }
 
-interface IndexingState {
-  bookHash: string;
-  status: 'idle' | 'indexing' | 'complete' | 'error';
-  progress: number;
-  chunksProcessed: number;
-  totalChunks: number;
-  error?: string;
-}
-
 export interface EmbeddingProgress {
   current: number;
   total: number;

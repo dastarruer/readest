@@ -28,12 +28,6 @@ export const rollIntoTelemetryPromptBucket = (rng: () => number = Math.random) =
   return rng() < TELEMETRY_PROMPT_BUCKET_RATE;
 };
 
-const captureEvent = (event: string, properties?: Record<string, unknown>) => {
-  if (!hasOptedOutTelemetry()) {
-    posthog.capture(event, properties);
-  }
-};
-
 // Boot records the decision before PostHog starts; `applyPostHogConsent`
 // hands it to the SDK once init has set the project token. A consent call
 // before init would be stored under a token-less key that nothing reads.

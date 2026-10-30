@@ -759,20 +759,3 @@ export const getXPointerFromCFI = async (
   const xpointer = converter.cfiToXPointer(cfi);
   return xpointer;
 };
-
-// Koreader sometimes cannot recognize totally valid XPointer.
-// Workaround this by cleaning up any trailing /text().N segments.
-// Also remove any trailing .N suffixes after node steps.
-// This has neglectable effect on position accuracy as the XPointer still point to the correct element
-// while offset within the text node is usually ignored by pagination.
-const normalizeProgressXPointer = (xpointer: string): string => {
-  const tailingTextOffset = /\/text\(\).*$/;
-  if (xpointer.match(tailingTextOffset)) {
-    xpointer = xpointer.replace(tailingTextOffset, '');
-  }
-  const suffixNodeOffset = /\.\d+$/;
-  if (xpointer.match(suffixNodeOffset)) {
-    xpointer = xpointer.replace(suffixNodeOffset, '');
-  }
-  return xpointer;
-};

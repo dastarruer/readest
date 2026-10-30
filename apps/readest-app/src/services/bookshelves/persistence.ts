@@ -8,7 +8,7 @@ import { getReplicaSync } from '@/services/sync/replicaSync';
 import { isSyncCategoryEnabled } from '@/services/sync/syncCategories';
 import { HlcGenerator } from '@/libs/crdt';
 import { LocalStorageHlcStore } from '@/libs/hlcStore';
-import { applyBookshelfDraft, mergeBookshelfStates, readBookshelves } from './state';
+import { applyBookshelfDraft, mergeBookshelfStates } from './state';
 import {
   journalBookshelfOperation,
   readPendingBookshelves,
@@ -118,18 +118,7 @@ export const saveBookshelfDraft = async (
   await persistState(env, state);
   await publishPendingBookshelves(env, userId);
 };
-const updateBookshelf = async (
-  env: EnvConfigType,
-  id: string,
-  update: (shelf: BookshelfDefinition) => BookshelfDefinition,
-) => {
-  const base = readBookshelves(useSettingsStore.getState().settings);
-  await saveBookshelfDraft(
-    env,
-    base,
-    base.map((s) => (s.id === id ? update(s) : s)),
-  );
-};
+
 export const applyRemoteBookshelfRows = async (env: EnvConfigType, rows: ReplicaRow[]) => {
   let state: BookshelfState = { rows: {} };
   for (const row of rows) {
